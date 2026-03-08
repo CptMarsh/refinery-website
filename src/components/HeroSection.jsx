@@ -67,6 +67,10 @@ export default function HeroSection() {
           </a>
           <a
             href="#game"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('game')?.scrollIntoView({ behavior: 'smooth' });
+            }}
             className="px-8 py-3 border border-[#3a3028] text-[#8a7d6a] hover:border-[#5a4f44] hover:text-[#c8b89a] font-semibold tracking-widest uppercase text-sm transition-all duration-300"
           >
             Learn More
