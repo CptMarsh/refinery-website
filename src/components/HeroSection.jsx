@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center overflow-x-hidden">
       {/* Flat void background */}
       <div className="absolute inset-0 bg-[#080808]" />
 
@@ -33,8 +33,12 @@ export default function HeroSection() {
 
         {/* Game title */}
         <h1
-          className="text-6xl md:text-8xl lg:text-9xl font-black tracking-widest text-[#d4c9b0] leading-none mb-6 uppercase"
-          style={{ textShadow: "0 2px 40px rgba(0,0,0,0.9), 0 0 60px rgba(107,143,78,0.15)", letterSpacing: "0.12em" }}
+          className="font-black text-[#d4c9b0] leading-none mb-6 uppercase w-full"
+          style={{
+            fontSize: "clamp(2rem, 9vw, 9rem)",
+            letterSpacing: "0.08em",
+            textShadow: "0 2px 40px rgba(0,0,0,0.9), 0 0 60px rgba(107,143,78,0.15)"
+          }}
         >
           GRAVEKEEPERS
           {/* <br />

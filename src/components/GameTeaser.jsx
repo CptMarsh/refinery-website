@@ -39,7 +39,7 @@ export default function GameTeaser() {
         </div>
 
         {/* Info */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 items-center text-center md:items-start md:text-left">
           <div className="flex flex-wrap gap-2">
             {tags.map((tag) => (
               <span
@@ -51,7 +51,10 @@ export default function GameTeaser() {
             ))}
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-black text-[#d4c9b0] leading-tight tracking-widest uppercase">
+          <h2
+            className="font-black text-[#d4c9b0] leading-tight uppercase"
+            style={{ fontSize: "clamp(1.75rem, 5vw, 3rem)", letterSpacing: "0.08em" }}
+          >
             Gravekeepers
           </h2>
 
