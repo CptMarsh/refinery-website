@@ -1,5 +1,5 @@
 export default function GameTeaser() {
-  const tags = ["Coming Soon", "Indie", "Dark Fantasy", "Action"];
+  const tags = ["Co-op", "Horror"];
 
   return (
     <section id="game" className="py-24 px-6 md:px-12 max-w-6xl mx-auto">
@@ -59,21 +59,20 @@ export default function GameTeaser() {
 
           <div className="space-y-4 text-[#8a7d6a] leading-relaxed italic">
             <p>
-              In a world where the boundary between the living and the dead has worn thin, you are a Gravekeeper — one of the last guardians tasked with maintaining the ancient rites that keep the darkness sealed.
+              You are maintenance workers in a haunted graveyard.
             </p>
             <p>
-              But the seals are breaking. And something old is waking up beneath the earth.
+              Do your job, survive the night, extract alive.
+            </p>
+            <p>
+              But don't worry - even if you die, you're still in the game!
             </p>
           </div>
 
           <div className="pt-2 space-y-4">
             <div>
-              <p className="text-[#6b8f4e] text-xs tracking-[0.3em] uppercase font-medium mb-1">Studio</p>
-              <p className="text-[#c8b89a] font-semibold tracking-wide">The Marsh Refinery</p>
-            </div>
-            <div>
               <p className="text-[#6b8f4e] text-xs tracking-[0.3em] uppercase font-medium mb-1">Status</p>
-              <p className="text-[#c8b89a] font-semibold tracking-wide">In Development</p>
+              <p className="text-[#c8b89a] font-semibold tracking-wide">Seeking funding</p>
             </div>
           </div>
         </div>

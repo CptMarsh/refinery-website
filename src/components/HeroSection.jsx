@@ -19,10 +19,10 @@ export default function HeroSection() {
 
       <div className="relative z-10 flex flex-col items-center">
         {/* Studio label */}
-        <p className="text-[#6b8f4e] text-xs tracking-[0.4em] uppercase mb-8 font-medium"
+        {/* <p className="text-[#6b8f4e] text-xs tracking-[0.4em] uppercase mb-8 font-medium"
           style={{ fontVariant: "small-caps" }}>
           The Marsh Refinery Presents
-        </p>
+        </p> */}
 
         {/* Ornamental rule */}
         <div className="flex items-center gap-4 mb-8 opacity-40">
@@ -36,9 +36,9 @@ export default function HeroSection() {
           className="text-6xl md:text-8xl lg:text-9xl font-black tracking-widest text-[#d4c9b0] leading-none mb-6 uppercase"
           style={{ textShadow: "0 2px 40px rgba(0,0,0,0.9), 0 0 60px rgba(107,143,78,0.15)", letterSpacing: "0.12em" }}
         >
-          GRAVE
-          <br />
-          <span className="text-[#4a7a35]">KEEPERS</span>
+          GRAVEKEEPERS
+          {/* <br />
+          <span className="text-[#4a7a35]">KEEPERS</span> */}
         </h1>
 
         {/* Ornamental rule */}
@@ -50,7 +50,7 @@ export default function HeroSection() {
 
         {/* Tagline */}
         <p className="text-[#8a7d6a] text-base md:text-lg max-w-md leading-relaxed italic">
-          The dead don't rest easy. Neither do you.
+          Make it through the night. Or don't.
         </p>
 
         {/* CTA */}
