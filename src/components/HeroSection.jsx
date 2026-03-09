@@ -1,21 +1,27 @@
 export default function HeroSection() {
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center overflow-x-hidden">
-      {/* Video background */}
+      {/* Background */}
       <div className="absolute inset-0 overflow-hidden bg-[#080808]">
-        <iframe
-          src="https://www.youtube.com/embed/TJNNe4ZapG4?autoplay=1&mute=1&loop=1&playlist=TJNNe4ZapG4&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        {/* Background video with poster fallback */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          poster="/og-image2.png"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/gk-preview-video.mp4" type="video/mp4" />
+        </video>
+
+        {/* Dot texture */}
+        <div className="absolute inset-0 opacity-[0.06]"
           style={{
-            width: "100vw",
-            height: "56.25vw",
-            minHeight: "100vh",
-            minWidth: "177.78vh",
-            pointerEvents: "none",
-            border: "none",
+            backgroundImage: "radial-gradient(circle, #c8b89a 1px, transparent 1px)",
+            backgroundSize: "40px 40px"
           }}
-          allow="autoplay; encrypted-media"
-          allowFullScreen
         />
       </div>
 
@@ -28,11 +34,6 @@ export default function HeroSection() {
       />
 
       <div className="relative z-10 flex flex-col items-center">
-        {/* Studio label */}
-        {/* <p className="text-[#6b8f4e] text-xs tracking-[0.4em] uppercase mb-8 font-medium"
-          style={{ fontVariant: "small-caps" }}>
-          The Marsh Refinery Presents
-        </p> */}
 
         {/* Ornamental rule */}
         <div className="flex items-center gap-4 mb-8 opacity-40">
@@ -51,8 +52,6 @@ export default function HeroSection() {
           }}
         >
           GRAVEKEEPERS
-          {/* <br />
-          <span className="text-[#4a7a35]">KEEPERS</span> */}
         </h1>
 
         {/* Ornamental rule */}
