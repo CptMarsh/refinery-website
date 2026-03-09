@@ -1,16 +1,26 @@
 export default function HeroSection() {
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center overflow-x-hidden">
-      {/* Flat void background */}
-      <div className="absolute inset-0 bg-[#080808]" />
+      {/* Video background */}
+      <div className="absolute inset-0 overflow-hidden bg-[#080808]">
+        <iframe
+          src="https://www.youtube.com/embed/TJNNe4ZapG4?autoplay=1&mute=1&loop=1&playlist=TJNNe4ZapG4&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          style={{
+            width: "100vw",
+            height: "56.25vw",
+            minHeight: "100vh",
+            minWidth: "177.78vh",
+            pointerEvents: "none",
+            border: "none",
+          }}
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+        />
+      </div>
 
-      {/* Subtle star-dust texture via radial dots */}
-      <div className="absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage: "radial-gradient(circle, #c8b89a 1px, transparent 1px)",
-          backgroundSize: "40px 40px"
-        }}
-      />
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* Faint vignette */}
       <div className="absolute inset-0"
