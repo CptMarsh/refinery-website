@@ -2,40 +2,21 @@ export default function GameTeaser() {
   const tags = ["Co-op", "Horror"];
 
   return (
-    <section id="game" className="py-24 px-6 md:px-12 max-w-6xl mx-auto">
-      <div className="grid md:grid-cols-2 gap-16 items-center">
+    <section id="game" className="relative py-24 px-6 md:px-12">
+      {/* Star-dust dot texture */}
+      <div className="absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage: "radial-gradient(circle, #c8b89a 1px, transparent 1px)",
+          backgroundSize: "40px 40px"
+        }}
+      />
+
+      <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         
-        {/* Key art placeholder — ancient tome / void portal feel */}
-        <div className="relative aspect-[3/4] max-w-sm mx-auto md:mx-0 w-full overflow-hidden border border-[#2a2218]"
-          style={{ boxShadow: "0 0 60px rgba(0,0,0,0.8), inset 0 0 40px rgba(0,0,0,0.6)" }}>
-          <div className="absolute inset-0 bg-[#0d0b08]" />
-
-          {/* Parchment texture dots */}
-          <div className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage: "radial-gradient(circle, #c8b89a 1px, transparent 1px)",
-              backgroundSize: "20px 20px"
-            }}
-          />
-
-          {/* Central sigil */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 p-8">
-            {/* Outer octagon-ish shape via borders */}
-            <div className="relative w-32 h-32 flex items-center justify-center">
-              <div className="absolute inset-0 border border-[#4a7a35]/25 rotate-0" />
-              <div className="absolute inset-2 border border-[#4a7a35]/15 rotate-45" />
-              <div className="absolute inset-4 border border-[#4a7a35]/20 rotate-0" />
-              <div className="w-3 h-3 bg-[#4a7a35]/40 rotate-45" />
-            </div>
-            <div className="w-px h-12 bg-[#4a7a35]/20" />
-            <p className="text-[#6b8f4e]/40 text-xs tracking-[0.4em] uppercase">Key Art Coming Soon</p>
-          </div>
-
-          {/* Corner runes */}
-          <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-[#4a7a35]/30" />
-          <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-[#4a7a35]/30" />
-          <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-[#4a7a35]/30" />
-          <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-[#4a7a35]/30" />
+        {/* Key art */}
+        <div className="relative max-w-sm mx-auto md:mx-0 w-full overflow-hidden border border-[#2a2218]"
+          style={{ boxShadow: "0 0 60px rgba(0,0,0,0.8)" }}>
+          <img src="/gk-preview.png" alt="Gravekeepers key art" className="w-full h-full object-cover" />
         </div>
 
         {/* Info */}
