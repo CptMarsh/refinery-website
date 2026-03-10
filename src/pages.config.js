@@ -1,10 +1,5 @@
 /**
- * pages.config.js - Page routing configuration
- * 
- * This file is AUTO-GENERATED. Do not add imports or modify PAGES manually.
- * Pages are auto-registered when you create files in the ./pages/ folder.
- * 
- * THE ONLY EDITABLE VALUE: mainPage
+ * mainPage:
  * This controls which page is the landing page (shown when users visit the app).
  * 
  * Example file structure:
@@ -47,14 +42,17 @@
  *
  * The mainPage value must match a key in the PAGES object exactly.
  */
+
 import Home from './pages/Home';
+import ComingSoon from './pages/ComingSoon';
 
 
 export const PAGES = {
+    "ComingSoon": ComingSoon,
     "Home": Home,
 }
 
 export const pagesConfig = {
-    mainPage: "Home",
-    Pages: PAGES,
+    mainPage: "ComingSoon",
+    // Pages: PAGES,
 };
