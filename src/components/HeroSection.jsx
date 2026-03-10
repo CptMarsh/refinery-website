@@ -3,18 +3,14 @@ export default function HeroSection() {
     <section className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center overflow-x-hidden">
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden bg-[#080808]">
-        {/* Background video with poster fallback */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-          poster="/og-image2.png"
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/gk-preview-video.mp4" type="video/mp4" />
-        </video>
+        {/* Background video */}
+        <iframe
+          src="https://www.youtube.com/embed/6U25BAluFvc?autoplay=1&mute=1&loop=1&playlist=6U25BAluFvc&controls=0&disablekb=1&modestbranding=1"
+          className="absolute inset-0 w-full h-full"
+          style={{ border: "none", pointerEvents: "none", transform: "scale(1.5)" }}
+          allow="autoplay; fullscreen"
+          title="Gravekeepers trailer"
+        />
 
         {/* Dot texture */}
         <div className="absolute inset-0 opacity-[0.06]"
