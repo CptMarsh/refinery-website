@@ -49,10 +49,10 @@ import ComingSoon from './pages/ComingSoon';
 
 export const PAGES = {
     "ComingSoon": ComingSoon,
-    "Home": Home,
+    // "Home": Home,
 }
 
 export const pagesConfig = {
     mainPage: "ComingSoon",
-    // Pages: PAGES,
+    Pages: PAGES,
 };
