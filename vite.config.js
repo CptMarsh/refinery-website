@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import path from 'path'
 
 export default defineConfig({
-  base: '/refinery-website/',
+  base: '/',
   plugins: [react()],
   resolve: {
     alias: {
