@@ -2,7 +2,7 @@ export default function GameTeaser() {
   const tags = ["Co-op", "Horror"];
 
   return (
-    <section id="game" className="relative py-24 px-6 md:px-12">
+    <section id="gravekeepersgame" className="relative py-24 px-6 md:px-12">
       {/* Star-dust dot texture */}
       <div className="absolute inset-0 opacity-[0.06]"
         style={{
@@ -41,7 +41,7 @@ export default function GameTeaser() {
 
           <div className="w-12 h-px bg-[#4a7a35]/50" />
 
-          <div className="space-y-4 text-[#8a7d6a] leading-relaxed italic">
+          <div className="space-y-2 text-[#8a7d6a] leading-relaxed italic">
             <p>
               You are maintenance workers in a haunted graveyard.
             </p>
@@ -57,6 +57,28 @@ export default function GameTeaser() {
             <div>
               <p className="text-[#6b8f4e] text-xs tracking-[0.3em] uppercase font-medium mb-1">Status</p>
               <p className="text-[#c8b89a] font-semibold tracking-wide">Seeking funding</p>
+            </div>
+
+            <div>
+              <p className="text-[#6b8f4e] text-xs tracking-[0.3em] uppercase font-medium mb-3">Links</p>
+              <div className="flex flex-col gap-3">
+                <a
+                  href="https://marsh-refinery.itch.io/gravekeepers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-[#c8b89a] tracking-widest uppercase underline underline-offset-4 decoration-[#4a7a35]/40 hover:decoration-[#4a7a35] transition-colors w-fit"
+                >
+                  Playable build on itch.io
+                </a>
+                <a
+                  href="/gravekeepers-pitch-deck.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-[#c8b89a] tracking-widest uppercase underline underline-offset-4 decoration-[#4a7a35]/40 hover:decoration-[#4a7a35] transition-colors w-fit"
+                >
+                  Pitch Deck
+                </a>
+              </div>
             </div>
           </div>
         </div>

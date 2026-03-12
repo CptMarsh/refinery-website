@@ -64,19 +64,20 @@ export default function HeroSection() {
 
         {/* CTA */}
         <div className="flex flex-col sm:flex-row gap-4 mt-12">
-          <a
+          {/* <a
             href="#wishlist"
             className="px-8 py-3 border border-[#4a7a35] text-[#6b8f4e] hover:bg-[#4a7a35]/20 font-semibold tracking-widest uppercase text-sm transition-all duration-300"
           >
             Add to Wishlist
-          </a>
+          </a> */}
           <a
-            href="#game"
+            href="#gravekeepersgame"
             onClick={(e) => {
               e.preventDefault();
-              document.getElementById('game')?.scrollIntoView({ behavior: 'smooth' });
+              document.getElementById('gravekeepersgame')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="px-8 py-3 border border-[#3a3028] text-[#8a7d6a] hover:border-[#5a4f44] hover:text-[#c8b89a] font-semibold tracking-widest uppercase text-sm transition-all duration-300"
+            // className="px-8 py-3 border border-[#3a3028] text-[#8a7d6a] hover:border-[#5a4f44] hover:text-[#c8b89a] font-semibold tracking-widest uppercase text-sm transition-all duration-300"
+            className="px-16 py-3 border border-[#4a7a35] text-[#6b8f4e] hover:bg-[#4a7a35]/20 font-semibold tracking-widest uppercase text-sm transition-all duration-300"
           >
             Learn More
           </a>
