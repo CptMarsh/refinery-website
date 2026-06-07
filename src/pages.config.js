@@ -45,11 +45,12 @@
 
 import Home from './pages/Home';
 import ComingSoon from './pages/ComingSoon';
+import AboutUs from './pages/AboutUs';
 
 
 export const PAGES = {
     "ComingSoon": ComingSoon,
-    // "Home": Home,
+    "About": AboutUs,
 }
 
 export const pagesConfig = {
