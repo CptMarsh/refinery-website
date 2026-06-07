@@ -1,38 +1,61 @@
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
+const Ornament = ({ className = '' }) => (
+  <div className={`flex items-center gap-4 opacity-30 ${className}`}>
+    <div className="w-16 h-px bg-[#6b8f4e]" />
+    <div className="w-1.5 h-1.5 rotate-45 bg-[#6b8f4e]" />
+    <div className="w-16 h-px bg-[#6b8f4e]" />
+  </div>
+);
 
 export default function PageNotFound() {
-    const location = useLocation();
-    const pageName = location.pathname.substring(1);
+  const location = useLocation();
+  const pageName = location.pathname.substring(1);
 
-    return (
-        <div className="min-h-screen flex items-center justify-center p-6 bg-slate-50">
-            <div className="max-w-md w-full">
-                <div className="text-center space-y-6">
-                    <div className="space-y-2">
-                        <h1 className="text-7xl font-light text-slate-300">404</h1>
-                        <div className="h-0.5 w-16 bg-slate-200 mx-auto"></div>
-                    </div>
-                    <div className="space-y-3">
-                        <h2 className="text-2xl font-medium text-slate-800">
-                            Page Not Found
-                        </h2>
-                        <p className="text-slate-600 leading-relaxed">
-                            The page <span className="font-medium text-slate-700">"{pageName}"</span> could not be found.
-                        </p>
-                    </div>
-                    <div className="pt-6">
-                        <button
-                            onClick={() => window.location.href = '/'}
-                            className="inline-flex items-center px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500"
-                        >
-                            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                            </svg>
-                            Go Home
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+  return (
+    <section className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center overflow-x-hidden bg-[#080808]">
+      {/* Dot texture */}
+      <div
+        className="absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage: 'radial-gradient(circle, #c8b89a 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
+        }}
+      />
+
+      {/* Faint vignette */}
+      <div
+        className="absolute inset-0"
+        style={{ background: 'radial-gradient(ellipse at center, transparent 40%, #000 100%)' }}
+      />
+
+      <h2 className="text-[#8a7d6a] text-xl md:text-2xl tracking-widest uppercase mb-8">
+        Quoth the Raven
+      </h2>
+
+      <div className="relative z-10 flex flex-col items-center">
+        <Ornament />
+
+        <h1
+          className="font-black text-[#d4c9b0] leading-none uppercase"
+          style={{
+            fontSize: 'clamp(4rem, 18vw, 12rem)',
+            letterSpacing: '0.08em',
+            textShadow: '0 2px 40px rgba(0,0,0,0.9), 0 0 60px rgba(107,143,78,0.15)',
+          }}
+        >
+          404
+        </h1>
+
+        <Ornament className="mt-6 mb-8" />
+
+        <Link
+          to="/"
+          className="mt-12 px-16 py-3 border border-[#4a7a35] text-[#6b8f4e] hover:bg-[#4a7a35]/20 font-semibold tracking-widest uppercase text-sm transition-all duration-300"
+        >
+          Return Home
+        </Link>
+      </div>
+    </section>
+  );
 }
