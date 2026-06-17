@@ -136,7 +136,7 @@ function TeamMember({ member }) {
         {member.bio}
       </p> */}
 
-      {member.socials && member.socials.length > 0 && (
+      {/* {member.socials && member.socials.length > 0 && (
         <div className="flex items-center gap-4">
           {member.socials.map(({ platform, href }) => (
             <a
@@ -151,7 +151,7 @@ function TeamMember({ member }) {
             </a>
           ))}
         </div>
-      )}
+      )} */}
     </div>
   );
 }
