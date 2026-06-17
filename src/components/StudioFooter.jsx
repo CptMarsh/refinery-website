@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const MailIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
     <rect width="20" height="16" x="2" y="4" rx="2" />
@@ -25,15 +27,32 @@ const DiscordIcon = () => (
 
 const socialLinks = [
   { label: 'Email', href: 'mailto:omer.schapiro@themarshrefinery.com', icon: <MailIcon /> },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/omerschapiro', icon: <LinkedInIcon /> },
-  { label: 'YouTube', href: 'https://www.youtube.com/@marsh-refinery-studio', icon: <YouTubeIcon /> },
+  // { label: 'LinkedIn', href: 'https://www.linkedin.com/in/omerschapiro', icon: <LinkedInIcon /> },
   { label: 'Discord', href: 'https://discord.com/invite/54ChSunvEF', icon: <DiscordIcon /> },
+  { label: 'YouTube', href: 'https://www.youtube.com/@marsh-refinery-studio', icon: <YouTubeIcon /> },
 ];
 
 export default function StudioFooter() {
   return (
     <footer className="py-10 px-6 border-t border-[#1e1a14] bg-[#080808]">
       <div className="max-w-4xl mx-auto flex flex-col items-center gap-4">
+
+        <nav className="flex items-center gap-6">
+          <Link
+            to="/"
+            className="text-[#4a3f33] hover:text-[#8a7d6a] text-xs tracking-widest uppercase transition-colors duration-200"
+          >
+            Home
+          </Link>
+          <Link
+            to="/About"
+            className="text-[#4a3f33] hover:text-[#8a7d6a] text-xs tracking-widest uppercase transition-colors duration-200"
+          >
+            About
+          </Link>
+        </nav>
+
+        <div className="w-16 h-px bg-[#1e1a14]" />
 
         <div className="flex flex-col items-center gap-2">
           <span className="text-[#4a3f33] text-xs tracking-widest uppercase">Contact</span>
