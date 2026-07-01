@@ -47,8 +47,6 @@ export default function PageNotFound() {
           404
         </h1>
 
-        <p className="mt-6 italic text-bone-400">Nothing buried here.</p>
-
         <Ornament className="mt-6 mb-8" />
 
         <Link
