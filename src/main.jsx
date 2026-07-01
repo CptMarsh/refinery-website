@@ -1,6 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from '@/App.jsx'
+import '@fontsource-variable/cormorant-garamond'; // display (400–700)
+import '@fontsource-variable/inter';               // UI / body
+import '@fontsource/jetbrains-mono/400.css';        // mono
+import '@fontsource/jetbrains-mono/500.css';
 import '@/index.css'
 
 const rootElement = document.getElementById('root')

@@ -10,8 +10,8 @@ module.exports = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		fontFamily: {
-  			display: ["'Cormorant Garamond'", "'Times New Roman'", 'Georgia', 'serif'],
-  			ui:      ['Inter', '-apple-system', 'BlinkMacSystemFont', "'Segoe UI'", 'sans-serif'],
+  			display: ["'Cormorant Garamond Variable'", "'Cormorant Garamond'", "'Times New Roman'", 'Georgia', 'serif'],
+  			ui:      ["'Inter Variable'", 'Inter', '-apple-system', 'BlinkMacSystemFont', "'Segoe UI'", 'sans-serif'],
   			mono:    ['ui-monospace', "'JetBrains Mono'", 'Menlo', 'Consolas', 'monospace'],
   		},
   		letterSpacing: {
