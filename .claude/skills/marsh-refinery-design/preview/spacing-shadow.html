@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- @dsCard group="Spacing" name="Spacing — Shadow & Texture" subtitle="Key-art glow, display glow, dot dust" viewport="700x210" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Spacing — Shadow &amp; Texture</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin:0; padding:24px 28px; background: var(--ink-page); }
+  .grid { display:grid; grid-template-columns: 1fr 1fr 1fr; gap:14px; align-items:start; }
+  .cell { display:flex; flex-direction:column; gap:10px; }
+  .box  { width:100%; height:90px; border:1px solid var(--ink-edge); background: var(--ink-surface); position:relative; }
+  .glow { box-shadow: 0 0 60px rgba(0,0,0,.8); }
+  .display { box-shadow: 0 2px 40px rgba(0,0,0,.9), 0 0 60px var(--moss-glow); }
+  .dust { background:
+            radial-gradient(circle, rgba(200,184,154,.16) 1px, transparent 1px) 0 0/40px 40px,
+            #080808; }
+  .label { font-size:10px; letter-spacing:.18em; text-transform:uppercase; color: var(--bone-300); }
+  .meta  { font-family: var(--font-mono); font-size:10px; color: var(--bone-400); }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="cell">
+      <div class="box glow"></div>
+      <div class="label">Key-Art Frame</div>
+      <div class="meta">0 0 60px rgba(0,0,0,.8)</div>
+    </div>
+    <div class="cell">
+      <div class="box display"></div>
+      <div class="label">Display Glow</div>
+      <div class="meta">moss glow @ 15%</div>
+    </div>
+    <div class="cell">
+      <div class="box dust"></div>
+      <div class="label">Dot Dust Texture</div>
+      <div class="meta">40px tile · 6% opacity</div>
+    </div>
+  </div>
+</body>
+</html>

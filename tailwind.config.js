@@ -12,7 +12,7 @@ module.exports = {
   		fontFamily: {
   			display: ["'Inter Variable'", 'Inter', '-apple-system', 'BlinkMacSystemFont', "'Segoe UI'", 'sans-serif'],
   			ui:      ["'Inter Variable'", 'Inter', '-apple-system', 'BlinkMacSystemFont', "'Segoe UI'", 'sans-serif'],
-  			body:    ["'Instrument Serif'", 'Georgia', "'Times New Roman'", 'serif'],
+  			body:    ["'Inter Variable'", 'Inter', '-apple-system', 'BlinkMacSystemFont', "'Segoe UI'", 'sans-serif'],
   			mono:    ['ui-monospace', "'JetBrains Mono'", 'Menlo', 'Consolas', 'monospace'],
   		},
   		letterSpacing: {

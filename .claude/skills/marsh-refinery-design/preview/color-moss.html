@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- @dsCard group="Colors" name="Color — Moss" subtitle="The only accent — borders, hairlines, washes" viewport="700x260" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Color — Moss + Signal Green</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin:0; padding:24px 28px; background: var(--ink-page); }
+  .grid { display:grid; grid-template-columns: repeat(6, 1fr); gap:10px; }
+  .swatch { aspect-ratio: 1 / 1; border:1px solid var(--ink-edge); display:flex; flex-direction:column; justify-content:flex-end; padding:8px; position:relative; }
+  .swatch.signal { outline: 1px solid var(--bone-300); outline-offset: 3px; }
+  .swatch.signal::before { content: "MAIN"; position:absolute; top:8px; left:8px; font-size:9px; letter-spacing:.30em; color:#d4c9b0; font-weight:600; }
+  .name { font-size:10px; letter-spacing:.18em; text-transform:uppercase; }
+  .hex  { font-family: var(--font-mono); font-size:10px; opacity:.85; margin-top:2px; }
+  .header { font-size:11px; letter-spacing:.30em; text-transform:uppercase; color: var(--moss-500); margin-bottom:12px; display:flex; gap:18px; }
+  .header span { color: var(--ink-edge-3); }
+  .note { font-style: italic; font-size:11px; color: var(--bone-400); margin-top:14px; line-height:1.6; max-width: 56ch; }
+</style>
+</head>
+<body>
+  <div class="header">Moss — the only accent <span>·</span> Signal — the studio stamp</div>
+  <div class="grid">
+    <div class="swatch signal" style="background:#015a06"><div class="name" style="color:#d4c9b0">Brand Primary</div><div class="hex" style="color:#d4c9b0">#015a06</div></div>
+    <div class="swatch" style="background:#0e4a16"><div class="name" style="color:#d4c9b0">Logo Deep</div><div class="hex" style="color:#d4c9b0">#0e4a16</div></div>
+    <div class="swatch" style="background:#2a3a20"><div class="name" style="color:#d4c9b0">Moss 700</div><div class="hex" style="color:#d4c9b0">#2a3a20</div></div>
+    <div class="swatch" style="background:#4a7a35"><div class="name" style="color:#d4c9b0">Moss 600</div><div class="hex" style="color:#d4c9b0">#4a7a35</div></div>
+    <div class="swatch" style="background:#6b8f4e"><div class="name" style="color:#0d0b08">Moss 500</div><div class="hex" style="color:#0d0b08">#6b8f4e</div></div>
+    <div class="swatch" style="background:#8aae6b"><div class="name" style="color:#0d0b08">Bright</div><div class="hex" style="color:#0d0b08">#8aae6b</div></div>
+  </div>
+  <div class="note">#015a06 is the studio's "loud" stamp — used full-strength on signature surfaces (covers, splashes, social avatar backgrounds, print). For chrome (borders, hairlines, hover washes), stay in the moss family at 15–20% alpha. The two greens almost never appear in the same composition.</div>
+</body>
+</html>

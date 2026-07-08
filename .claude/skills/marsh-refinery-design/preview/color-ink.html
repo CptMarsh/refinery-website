@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- @dsCard group="Colors" name="Color — Ink" subtitle="Six surface + rule shades" viewport="700x200" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Color — Ink</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin:0; padding:24px 28px; background: var(--ink-page); }
+  .grid { display:grid; grid-template-columns: repeat(6, 1fr); gap:10px; }
+  .swatch { aspect-ratio: 1 / 1; border:1px solid var(--ink-edge); display:flex; flex-direction:column; justify-content:flex-end; padding:8px; }
+  .name { font-size:10px; letter-spacing:.18em; text-transform:uppercase; color: var(--bone-300); }
+  .hex { font-family: var(--font-mono); font-size:10px; color: var(--bone-400); margin-top:2px; }
+  .header { font-size:11px; letter-spacing:.30em; text-transform:uppercase; color: var(--moss-500); margin-bottom:12px; }
+</style>
+</head>
+<body>
+  <div class="header">Ink — surfaces &amp; rules</div>
+  <div class="grid">
+    <div class="swatch" style="background:#050505"><div class="name">Void</div><div class="hex">#050505</div></div>
+    <div class="swatch" style="background:#080808"><div class="name">Page</div><div class="hex">#080808</div></div>
+    <div class="swatch" style="background:#0d0b08"><div class="name">Surface</div><div class="hex">#0d0b08</div></div>
+    <div class="swatch" style="background:#1e1a14"><div class="name">Rule</div><div class="hex">#1e1a14</div></div>
+    <div class="swatch" style="background:#2a2218"><div class="name">Edge</div><div class="hex">#2a2218</div></div>
+    <div class="swatch" style="background:#3a3028"><div class="name">Edge 2</div><div class="hex">#3a3028</div></div>
+  </div>
+</body>
+</html>
