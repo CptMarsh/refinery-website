@@ -25,7 +25,7 @@ export default function NewsletterSignup() {
 
         <p className="text-[#6b8f4e] text-xs tracking-[0.4em] uppercase mb-4 font-medium">Bear Witness</p>
         <h2 className="text-3xl md:text-4xl font-black text-[#d4c9b0] mb-4 tracking-widest uppercase">Follow Development</h2>
-        <p className="text-[#8a7d6a] mb-10 leading-relaxed italic">
+        <p className="font-body text-[#8a7d6a] mb-10 leading-relaxed italic">
           Receive dispatches from The Marsh Refinery — dev logs, reveals, and release info.
         </p>
 

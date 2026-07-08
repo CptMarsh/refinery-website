@@ -41,7 +41,7 @@ export default function GameTeaser() {
 
           <div className="w-12 h-px bg-[#4a7a35]/50" />
 
-          <div className="space-y-2 text-[#8a7d6a] leading-relaxed italic">
+          <div className="font-body space-y-2 text-[#8a7d6a] leading-relaxed italic">
             <p>
               You are maintenance workers in a haunted graveyard.
             </p>

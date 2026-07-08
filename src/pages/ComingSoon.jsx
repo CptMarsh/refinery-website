@@ -54,7 +54,7 @@ export default function ComingSoon() {
           </div>
 
           {/* Tagline */}
-          <p className="text-bone-400 text-base md:text-lg max-w-md leading-relaxed italic mb-4">
+          <p className="font-body text-bone-400 text-base md:text-lg max-w-md leading-relaxed italic mb-4">
             Make it through the night. Or don't.
           </p>
 
