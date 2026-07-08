@@ -34,7 +34,7 @@ const socialLinks = [
 
 export default function StudioFooter() {
   return (
-    <footer className="py-10 px-6 border-t border-[#1e1a14] bg-[#080808]">
+    <footer className="py-10 px-6 border-t border-[#1e1a14] bg-[#080808] font-ui">
       <div className="max-w-4xl mx-auto flex flex-col items-center gap-4">
 
         <nav className="flex items-center gap-6">

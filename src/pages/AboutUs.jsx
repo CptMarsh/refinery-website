@@ -158,7 +158,7 @@ function TeamMember({ member }) {
 
 export default function AboutUs() {
   return (
-    <div className="relative flex flex-col min-h-screen bg-[#080808] text-white font-sans">
+    <div className="relative flex flex-col min-h-screen bg-background text-foreground font-ui">
       <Navbar />
 
       <div className="relative flex-1 overflow-hidden">
