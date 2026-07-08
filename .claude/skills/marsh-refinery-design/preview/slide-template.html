@@ -1,0 +1,402 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="slide-template" subtitle="6-slide deck template (1920×1080)" viewport="1920x1080" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Slide template — The Marsh Refinery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  /* ---------- Slide-level tokens (1920×1080) ---------- */
+  deck-stage { --slide-w: 1920px; --slide-h: 1080px; --bg-color: #050505; }
+
+  body { margin:0; background: #000; font-family: 'Inter', sans-serif; }
+
+  section {
+    position: relative;
+    width: 1920px; height: 1080px;
+    background: var(--ink-page);
+    color: var(--bone-300);
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    isolation: isolate;
+  }
+
+  /* ---------- Brand layer stack (the candle-haze) ---------- */
+  .dust {
+    position:absolute; inset:0;
+    background-image: radial-gradient(circle, #c8b89a 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: .06;
+    pointer-events: none; z-index: 1;
+  }
+  .vignette {
+    position:absolute; inset:0;
+    background: radial-gradient(ellipse at center, transparent 40%, #000 100%);
+    pointer-events:none; z-index: 2;
+  }
+
+  /* ---------- Chrome (consistent across all slides) ---------- */
+  .chrome {
+    position:absolute; left:64px; right:64px; top:48px;
+    display:flex; align-items:center; justify-content:space-between;
+    z-index: 5;
+    font-size: 14px; letter-spacing: .30em;
+    text-transform: uppercase; color: var(--moss-500); font-weight: 500;
+  }
+  .chrome .left { display:flex; align-items:center; gap: 14px; color: var(--bone-300); }
+  .chrome .left img { width: 28px; height: 28px; }
+  .chrome .left .sep { width:1px; height: 18px; background: var(--ink-edge); }
+  .chrome .right { color: var(--ink-edge-3); }
+
+  .footer-rule {
+    position:absolute; left:64px; right:64px; bottom:48px;
+    display:flex; align-items:center; gap: 14px;
+    z-index: 5;
+    font-size: 13px; letter-spacing: .30em;
+    text-transform: uppercase; color: var(--ink-edge-3); font-weight: 500;
+  }
+  .footer-rule .h { flex: 1; height:1px; background: var(--ink-rule); }
+  .footer-rule .d { width: 6px; height:6px; transform: rotate(45deg); background: var(--moss-600); }
+
+  /* ---------- Ornament (line · diamond · line) ---------- */
+  .orn { display:inline-flex; align-items:center; gap: 14px; }
+  .orn .h { width: 64px; height:1px; background: var(--moss-500); opacity: .7; }
+  .orn .d { width: 8px; height:8px; transform: rotate(45deg); background: var(--moss-500); opacity: .9; }
+
+  /* ---------- Content layout ---------- */
+  .stage {
+    position:absolute; inset: 0;
+    display:flex; flex-direction:column;
+    padding: 160px 144px 144px;
+    z-index: 4;
+  }
+  .eyebrow {
+    font-size: 22px; letter-spacing: .40em;
+    text-transform: uppercase; color: var(--moss-500);
+    font-weight: 500;
+  }
+
+  h1.title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 176px; line-height: .9;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    color: var(--bone-200);
+    text-shadow: 0 2px 40px rgba(0,0,0,.9), 0 0 80px rgba(107,143,78,.18);
+    margin: 32px 0 0;
+  }
+  h1.section-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 144px; line-height: .92;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--bone-200);
+    margin: 24px 0 0;
+  }
+  h2.slide-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 96px; line-height: .95;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    color: var(--bone-200);
+    margin: 20px 0 0;
+  }
+  .lede {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 44px; line-height: 1.35;
+    color: var(--bone-300);
+    max-width: 30ch;
+    margin: 56px 0 0;
+    font-weight: 400;
+  }
+
+  .body {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 32px; line-height: 1.5;
+    color: var(--bone-300);
+    max-width: 28ch;
+    margin: 0;
+    font-weight: 400;
+  }
+
+  .meta-row {
+    display:flex; gap: 48px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px; letter-spacing: .30em;
+    text-transform: uppercase;
+    color: var(--moss-500);
+    font-weight: 500;
+    margin-top: 64px;
+  }
+  .meta-row span { color: var(--ink-edge-3); }
+
+  /* ---------- Variants ---------- */
+  /* Section divider (full-bleed signal green) */
+  section.signal { background: var(--brand-primary); }
+  section.signal .dust { opacity: .04; mix-blend-mode: overlay; }
+  section.signal .vignette { background: radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,.7) 100%); }
+  section.signal .chrome { color: var(--bone-200); }
+  section.signal .chrome .left { color: var(--bone-100); }
+  section.signal .chrome .right { color: var(--bone-300); }
+  section.signal .chrome .left .sep { background: rgba(212,201,176,.3); }
+  section.signal h1.section-title { color: var(--bone-100); text-shadow: 0 4px 60px rgba(0,0,0,.5); }
+  section.signal .eyebrow { color: var(--bone-200); }
+  section.signal .footer-rule { color: var(--bone-300); }
+  section.signal .footer-rule .h { background: rgba(212,201,176,.2); }
+  section.signal .footer-rule .d { background: var(--bone-200); }
+  section.signal .orn .h { background: var(--bone-200); }
+  section.signal .orn .d { background: var(--bone-200); }
+
+  /* Two-col with art */
+  section.split .stage { flex-direction: row; padding: 160px 144px; gap: 96px; }
+  section.split .col-text { flex: 1; display:flex; flex-direction:column; justify-content:center; }
+  section.split .col-art {
+    flex: 1; align-self:stretch;
+    border: 1px solid var(--ink-edge);
+    background:
+      repeating-linear-gradient(135deg, rgba(200,184,154,.025) 0 2px, transparent 2px 14px),
+      var(--ink-surface);
+    box-shadow: 0 0 60px rgba(0,0,0,.8);
+    display:flex; align-items:center; justify-content:center;
+    position: relative;
+  }
+  section.split .col-art .placeholder {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px; letter-spacing: .20em;
+    color: var(--ink-edge-3);
+    text-transform: uppercase;
+  }
+  section.split .col-art::before, section.split .col-art::after {
+    content:""; position:absolute; width: 14px; height: 14px;
+    border: 1px solid var(--moss-600);
+  }
+  section.split .col-art::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+  section.split .col-art::after { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+
+  /* List (rites) */
+  .rites { list-style:none; padding:0; margin: 56px 0 0; display:flex; flex-direction:column; gap: 28px; max-width: 30ch; }
+  .rites li {
+    display: grid; grid-template-columns: 64px 1fr; gap: 24px; align-items: baseline;
+    font-family: 'Instrument Serif', serif; font-style: italic;
+    font-size: 32px; line-height: 1.4;
+    color: var(--bone-300);
+  }
+  .rites .num {
+    font-family: 'Inter', sans-serif; font-style: normal;
+    font-size: 14px; letter-spacing: .30em;
+    color: var(--moss-500); font-weight: 600;
+    text-transform: uppercase;
+    border-top: 1px solid var(--moss-600);
+    padding-top: 14px;
+  }
+
+  /* Quote */
+  section.quote .stage { justify-content: center; align-items: center; text-align: center; padding: 0 200px; }
+  .pull {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 88px; line-height: 1.2;
+    color: var(--bone-200);
+    max-width: 26ch;
+    margin: 56px 0 0;
+    font-weight: 400;
+  }
+  .pull::before, .pull::after { color: var(--moss-500); padding: 0 .12em; }
+  .pull::before { content: "“"; }
+  .pull::after { content: "”"; }
+  .attrib {
+    margin-top: 56px;
+    font-size: 18px; letter-spacing: .30em;
+    text-transform: uppercase; color: var(--moss-500);
+    font-weight: 500;
+  }
+
+  /* End / sign-off */
+  section.end .stage { justify-content: center; align-items: center; text-align:center; }
+  section.end .seal {
+    width: 280px; height: 280px;
+    border: 1px solid var(--moss-600);
+    border-radius: 50%;
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+    margin-bottom: 48px;
+  }
+  section.end .seal::after {
+    content:""; position:absolute; inset:10px;
+    border:1px solid var(--moss-700); border-radius:50%;
+  }
+  section.end .seal img { width: 140px; height:140px; object-fit:contain; }
+
+</style>
+</head>
+<body>
+
+<deck-stage>
+
+  <!-- 1: TITLE -->
+  <section data-screen-label="01 Title">
+    <div class="dust"></div>
+    <div class="vignette"></div>
+    <div class="chrome">
+      <div class="left">
+        <img src="assets/studio-barrel-cream.png" alt="" />
+        <span>The Marsh Refinery</span>
+        <div class="sep"></div>
+        <span>Pitch · MMXXV</span>
+      </div>
+      <div class="right">Confidential</div>
+    </div>
+    <div class="stage">
+      <div class="orn"><div class="h"></div><div class="d"></div><div class="h"></div></div>
+      <div class="eyebrow">— Clock In —</div>
+      <h1 class="title">Gravekeepers</h1>
+      <p class="lede">A co-op horror game where you maintain a graveyard that does not wish to be maintained.</p>
+      <div class="meta-row">
+        <span>1–4 Players</span>
+        <span>·</span>
+        <span>Co-op Horror</span>
+        <span>·</span>
+        <span>PC · Steam · Itch</span>
+      </div>
+    </div>
+    <div class="footer-rule"><div class="h"></div><div class="d"></div><span>01 · Title</span></div>
+  </section>
+
+  <!-- 2: SECTION DIVIDER (signal green) -->
+  <section class="signal" data-screen-label="02 Section">
+    <div class="dust"></div>
+    <div class="vignette"></div>
+    <div class="chrome">
+      <div class="left">
+        <img src="assets/studio-barrel-cream.png" alt="" />
+        <span>The Marsh Refinery</span>
+        <div class="sep"></div>
+        <span>I · The Premise</span>
+      </div>
+      <div class="right">02 / 06</div>
+    </div>
+    <div class="stage" style="justify-content:center;">
+      <div class="orn"><div class="h"></div><div class="d"></div><div class="h"></div></div>
+      <div class="eyebrow" style="margin-top:8px;">Section I</div>
+      <h1 class="section-title">The<br/>Premise</h1>
+    </div>
+    <div class="footer-rule"><div class="h"></div><div class="d"></div><span>#015a06 · Brand Primary</span></div>
+  </section>
+
+  <!-- 3: TWO-COL CONTENT (text + art slot) -->
+  <section class="split" data-screen-label="03 Premise">
+    <div class="dust"></div>
+    <div class="vignette"></div>
+    <div class="chrome">
+      <div class="left">
+        <img src="assets/studio-barrel-cream.png" alt="" />
+        <span>The Marsh Refinery</span>
+        <div class="sep"></div>
+        <span>I · The Premise</span>
+      </div>
+      <div class="right">03 / 06</div>
+    </div>
+    <div class="stage">
+      <div class="col-text">
+        <div class="orn"><div class="h"></div><div class="d"></div><div class="h"></div></div>
+        <div class="eyebrow" style="margin-top:24px;">— The Job —</div>
+        <h2 class="slide-title">Maintain the<br/>graveyard.</h2>
+        <p class="body" style="margin-top:48px;">You're maintenance workers. You patch headstones, refill the lamps, salt the threshold. The graveyard does not appreciate this.</p>
+        <p class="body" style="margin-top:24px;">Make it through the night. Or don't.</p>
+      </div>
+      <div class="col-art">
+        <div class="placeholder">[ KEY ART · 3:4 PORTRAIT ]</div>
+      </div>
+    </div>
+    <div class="footer-rule"><div class="h"></div><div class="d"></div><span>03 · Two-column</span></div>
+  </section>
+
+  <!-- 4: LIST (rites) -->
+  <section data-screen-label="04 Rites">
+    <div class="dust"></div>
+    <div class="vignette"></div>
+    <div class="chrome">
+      <div class="left">
+        <img src="assets/studio-barrel-cream.png" alt="" />
+        <span>The Marsh Refinery</span>
+        <div class="sep"></div>
+        <span>II · The Loop</span>
+      </div>
+      <div class="right">04 / 06</div>
+    </div>
+    <div class="stage">
+      <div class="orn"><div class="h"></div><div class="d"></div><div class="h"></div></div>
+      <div class="eyebrow" style="margin-top:24px;">— The Job —</div>
+      <h2 class="slide-title">Three things<br/>per shift.</h2>
+      <ol class="rites">
+        <li><span class="num">I</span><span>Do your job. Patch what is broken before sundown.</span></li>
+        <li><span class="num">II</span><span>Survive the night. Stay inside the lamp-light when it walks.</span></li>
+        <li><span class="num">III</span><span>Extract alive. Bring the whole crew if you can — nobody digs alone.</span></li>
+      </ol>
+    </div>
+    <div class="footer-rule"><div class="h"></div><div class="d"></div><span>04 · List</span></div>
+  </section>
+
+  <!-- 5: PULL QUOTE -->
+  <section class="quote" data-screen-label="05 Quote">
+    <div class="dust"></div>
+    <div class="vignette"></div>
+    <div class="chrome">
+      <div class="left">
+        <img src="assets/studio-barrel-cream.png" alt="" />
+        <span>The Marsh Refinery</span>
+        <div class="sep"></div>
+        <span>III · The Tone</span>
+      </div>
+      <div class="right">05 / 06</div>
+    </div>
+    <div class="stage">
+      <div class="orn"><div class="h"></div><div class="d"></div><div class="h"></div></div>
+      <p class="pull">Even if you die, you're still in the game.</p>
+      <div class="attrib">— The bright side of a bad shift</div>
+    </div>
+    <div class="footer-rule"><div class="h"></div><div class="d"></div><span>05 · Quote</span></div>
+  </section>
+
+  <!-- 6: END / SIGN-OFF -->
+  <section class="end" data-screen-label="06 End">
+    <div class="dust"></div>
+    <div class="vignette"></div>
+    <div class="chrome">
+      <div class="left">
+        <img src="assets/studio-barrel-cream.png" alt="" />
+        <span>The Marsh Refinery</span>
+        <div class="sep"></div>
+        <span>End</span>
+      </div>
+      <div class="right">06 / 06</div>
+    </div>
+    <div class="stage">
+      <div class="seal"><img src="assets/studio-barrel-cream.png" alt="" /></div>
+      <div class="orn"><div class="h"></div><div class="d"></div><div class="h"></div></div>
+      <div class="eyebrow" style="margin-top:24px;">— Make it through the night —</div>
+      <h2 class="slide-title" style="font-size:64px; margin-top: 24px;">Or don't.</h2>
+      <div class="meta-row" style="margin-top: 80px;">
+        <span style="color: var(--bone-300);">themarshrefinery.com</span>
+        <span>·</span>
+        <span style="color: var(--bone-300);">marsh-refinery.itch.io</span>
+        <span>·</span>
+        <span style="color: var(--bone-300);">@marsh-refinery-studio</span>
+      </div>
+    </div>
+    <div class="footer-rule"><div class="h"></div><div class="d"></div><span>06 · End</span></div>
+  </section>
+
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+</body>
+</html>

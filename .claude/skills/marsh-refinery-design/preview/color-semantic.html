@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- @dsCard group="Colors" name="Color — Semantic" subtitle="Token roles: bg, fg, accent, border" viewport="700x340" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Color — Semantic</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin:0; padding:24px 28px; background: var(--ink-page); display:flex; flex-direction:column; gap:10px; }
+  .row { display:grid; grid-template-columns: 28px 140px 1fr 90px; gap:14px; align-items:center; padding:8px 12px; border:1px solid var(--ink-rule); }
+  .chip { width:28px; height:28px; border:1px solid var(--ink-edge); }
+  .role { font-size:11px; letter-spacing:.30em; text-transform:uppercase; color: var(--bone-300); }
+  .desc { font-size:11px; font-style: italic; color: var(--bone-400); }
+  .hex  { font-family: var(--font-mono); font-size:11px; color: var(--bone-400); text-align:right; }
+</style>
+</head>
+<body>
+  <div class="row"><div class="chip" style="background:#080808"></div><div class="role">--bg</div><div class="desc">Page background</div><div class="hex">#080808</div></div>
+  <div class="row"><div class="chip" style="background:#0d0b08"></div><div class="role">--bg-elev</div><div class="desc">Inputs, popovers, surfaces</div><div class="hex">#0d0b08</div></div>
+  <div class="row"><div class="chip" style="background:#d4c9b0"></div><div class="role">--fg-strong</div><div class="desc">Headings</div><div class="hex">#d4c9b0</div></div>
+  <div class="row"><div class="chip" style="background:#c8b89a"></div><div class="role">--fg</div><div class="desc">Default body strong</div><div class="hex">#c8b89a</div></div>
+  <div class="row"><div class="chip" style="background:#8a7d6a"></div><div class="role">--fg-muted</div><div class="desc">Italic narrative body</div><div class="hex">#8a7d6a</div></div>
+  <div class="row"><div class="chip" style="background:#6b8f4e"></div><div class="role">--accent</div><div class="desc">Eyebrow, tag text, rules</div><div class="hex">#6b8f4e</div></div>
+  <div class="row"><div class="chip" style="background:#2a2218"></div><div class="role">--border</div><div class="desc">Cards, frames, inputs</div><div class="hex">#2a2218</div></div>
+</body>
+</html>

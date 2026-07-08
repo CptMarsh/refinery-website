@@ -3,8 +3,7 @@ import Navbar from "../components/Navbar";
 
 export default function ComingSoon() {
   return (
-    <div className="relative flex flex-col min-h-screen bg-[#080808]">
-      <Navbar />
+    <div className="relative flex flex-col min-h-screen bg-background font-ui">
       <div className="relative flex flex-col items-center justify-center flex-1 px-6 text-center overflow-hidden">
 
         {/* Dot texture */}
@@ -25,20 +24,20 @@ export default function ComingSoon() {
         <div className="relative z-10 flex flex-col items-center w-full">
 
           {/* Studio name */}
-          <p className="text-[#6b8f4e] text-xs tracking-[0.4em] uppercase mb-8 font-medium">
+          <p className="text-moss-500 text-xs tracking-ritual uppercase mb-8 font-medium">
             The Marsh Refinery
           </p>
 
           {/* Top ornamental rule */}
           <div className="flex items-center gap-4 mb-8 opacity-40">
-            <div className="w-16 h-px bg-[#6b8f4e]" />
-            <div className="w-1.5 h-1.5 rotate-45 bg-[#6b8f4e]" />
-            <div className="w-16 h-px bg-[#6b8f4e]" />
+            <div className="w-16 h-px bg-moss-500" />
+            <div className="w-1.5 h-1.5 rotate-45 bg-moss-500" />
+            <div className="w-16 h-px bg-moss-500" />
           </div>
 
           {/* Heading */}
           <h1
-            className="font-black text-[#d4c9b0] leading-none mb-6 uppercase w-full"
+            className="font-display font-black text-bone-200 leading-none mb-6 uppercase w-full"
             style={{
               fontSize: "clamp(2rem, 9vw, 9rem)",
               letterSpacing: "0.08em",
@@ -50,18 +49,18 @@ export default function ComingSoon() {
 
           {/* Bottom ornamental rule */}
           <div className="flex items-center gap-4 mb-6 opacity-30">
-            <div className="w-16 h-px bg-[#6b8f4e]" />
-            <div className="w-1.5 h-1.5 rotate-45 bg-[#6b8f4e]" />
-            <div className="w-16 h-px bg-[#6b8f4e]" />
+            <div className="w-16 h-px bg-moss-500" />
+            <div className="w-1.5 h-1.5 rotate-45 bg-moss-500" />
+            <div className="w-16 h-px bg-moss-500" />
           </div>
 
           {/* Tagline */}
-          <p className="text-[#8a7d6a] text-base md:text-lg max-w-md leading-relaxed italic mb-4">
+          <p className="font-body text-bone-400 text-base md:text-lg max-w-md leading-relaxed italic mb-4">
             Make it through the night. Or don't.
           </p>
 
           {/* Coming soon label */}
-          <p className="text-[#6b8f4e] text-xs tracking-[0.4em] uppercase font-medium mb-12">
+          <p className="text-moss-500 text-xs tracking-ritual uppercase font-medium mb-12">
             Coming Soon
           </p>
         </div>

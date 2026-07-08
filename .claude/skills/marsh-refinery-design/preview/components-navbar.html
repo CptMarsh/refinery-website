@@ -1,0 +1,36 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Components — Navbar" subtitle="Fixed navbar + wishlist CTA" viewport="700x140" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Components — Navbar</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin:0; }
+  body { padding:0; background: var(--ink-page);
+         background-image: radial-gradient(circle, rgba(200,184,154,.16) 1px, transparent 1px);
+         background-size: 40px 40px; }
+  .nav { position:relative; display:flex; align-items:center; justify-content:space-between;
+    padding: 14px 24px; background: rgba(8,8,8,.9); backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--ink-rule); }
+  .left { display:flex; align-items:center; gap:12px; }
+  .logo { width:24px; height:24px; object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(85%) sepia(20%) saturate(350%) hue-rotate(5deg) brightness(90%); }
+  .name { color: var(--bone-200); font-size:11px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; }
+  .cta { font-size:11px; padding:7px 18px; border:1px solid var(--moss-700); color: var(--moss-500);
+    letter-spacing:.18em; text-transform:uppercase; cursor:pointer; }
+  .cta:hover { background: rgba(74,122,53,.20); }
+  .filler { height:60px; }
+</style>
+</head>
+<body>
+  <div class="nav">
+    <div class="left">
+      <img class="logo" src="../assets/studio-barrel-cream.png" alt="" />
+      <span class="name">The Marsh Refinery</span>
+    </div>
+    <a class="cta">Wishlist</a>
+  </div>
+  <div class="filler"></div>
+</body>
+</html>

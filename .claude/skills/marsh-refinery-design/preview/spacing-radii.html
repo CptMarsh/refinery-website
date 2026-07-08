@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- @dsCard group="Spacing" name="Spacing — Radii" subtitle="Default square; pills only for status" viewport="700x210" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Spacing — Radii &amp; Borders</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin:0; padding:24px 28px; background: var(--ink-page); }
+  .grid { display:grid; grid-template-columns: repeat(4, 1fr); gap:14px; }
+  .cell { display:flex; flex-direction:column; align-items:center; gap:8px; padding:8px; }
+  .box { width:80px; height:60px; border:1px solid var(--moss-600); background: var(--ink-surface); }
+  .label { font-family: var(--font-mono); font-size:10px; color: var(--bone-400); letter-spacing:.10em; text-transform:uppercase; }
+  .note { font-style: italic; font-size:11px; color: var(--bone-400); margin-top:14px; line-height:1.5; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="cell"><div class="box" style="border-radius:0"></div><div class="label">r-0 · 0px</div></div>
+    <div class="cell"><div class="box" style="border-radius:2px"></div><div class="label">r-1 · 2px</div></div>
+    <div class="cell"><div class="box" style="border-radius:4px"></div><div class="label">r-2 · 4px</div></div>
+    <div class="cell"><div class="box" style="border-radius:9999px"></div><div class="label">r-full · pill</div></div>
+  </div>
+  <div class="note">Default is square (r-0). Buttons, tags, frames, and inputs never round. Pills exist only for status chips on game cards.</div>
+</body>
+</html>

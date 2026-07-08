@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Components — Tags & Status" subtitle="Genre tag, status meta, ornament" viewport="700x220" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Components — Tags &amp; Status</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin:0; padding:28px; background: var(--ink-page); display:flex; flex-direction:column; gap:18px; }
+  .tag { display:inline-block; padding:5px 14px; font-size:11px; letter-spacing:.18em; text-transform:uppercase;
+    color: var(--moss-500); border:1px solid var(--moss-700); background:transparent; }
+  .row { display:flex; gap:10px; align-items:center; flex-wrap: wrap; }
+  .label { font-size:10px; letter-spacing:.30em; text-transform:uppercase; color: var(--ink-edge-3); width:80px; }
+  .meta { font-size:11px; font-weight:500; letter-spacing:.30em; text-transform:uppercase; color: var(--moss-500); }
+  .strong { font-weight:600; color: var(--bone-300); letter-spacing:.04em; }
+  .ornament { display:inline-flex; align-items:center; gap:10px; opacity:.5; }
+  .ornament .h { width:30px; height:1px; background: var(--moss-500); }
+  .ornament .d { width:5px; height:5px; transform:rotate(45deg); background: var(--moss-500); }
+</style>
+</head>
+<body>
+  <div class="row"><div class="label">Tags</div><span class="tag">Co-op</span><span class="tag">Horror</span><span class="tag">PC</span></div>
+  <div class="row"><div class="label">Status</div><div><div class="meta">Status</div><div class="strong">Seeking funding</div></div></div>
+  <div class="row"><div class="label">Ornament</div><div class="ornament"><div class="h"></div><div class="d"></div><div class="h"></div></div></div>
+</body>
+</html>

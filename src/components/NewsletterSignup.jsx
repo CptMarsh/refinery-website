@@ -23,9 +23,9 @@ export default function NewsletterSignup() {
           <div className="w-10 h-px bg-[#6b8f4e]" />
         </div>
 
-        <p className="text-[#6b8f4e] text-xs tracking-[0.4em] uppercase mb-4 font-medium">Bear Witness</p>
+        <p className="text-[#6b8f4e] text-xs tracking-[0.4em] uppercase mb-4 font-medium">Dispatches</p>
         <h2 className="text-3xl md:text-4xl font-black text-[#d4c9b0] mb-4 tracking-widest uppercase">Follow Development</h2>
-        <p className="text-[#8a7d6a] mb-10 leading-relaxed italic">
+        <p className="font-body text-[#8a7d6a] mb-10 leading-relaxed italic">
           Receive dispatches from The Marsh Refinery — dev logs, reveals, and release info.
         </p>
 
@@ -43,7 +43,7 @@ export default function NewsletterSignup() {
               type="submit"
               className="px-8 py-3 border border-[#4a7a35] text-[#6b8f4e] hover:bg-[#4a7a35]/20 font-semibold tracking-widest uppercase text-sm transition-all duration-300 whitespace-nowrap"
             >
-              Notify Me
+              Punch In
             </button>
           </form>
         ) : (
@@ -53,7 +53,7 @@ export default function NewsletterSignup() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <p className="text-[#c8b89a] font-medium tracking-wide">The rites are recorded. We'll be in touch.</p>
+            <p className="text-[#c8b89a] font-medium tracking-wide">You're on the roster. We'll be in touch.</p>
           </div>
         )}
       </div>

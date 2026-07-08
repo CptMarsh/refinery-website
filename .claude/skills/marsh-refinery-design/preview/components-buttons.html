@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Components — Buttons" subtitle="Outline moss + ghost variant" viewport="700x220" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Components — Buttons</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin:0; padding:28px; background: var(--ink-page); display:flex; flex-direction:column; gap:18px; align-items:flex-start; }
+  .btn { display:inline-flex; align-items:center; padding:12px 32px; font-family: var(--font-ui);
+    font-weight:600; font-size:13px; letter-spacing:.18em; text-transform:uppercase; cursor:pointer;
+    border:1px solid var(--moss-600); color: var(--moss-500); background:transparent;
+    transition: all 300ms var(--ease-default); }
+  .btn:hover { background: rgba(74,122,53,.20); }
+  .btn--ghost { border-color: var(--ink-edge-2); color: var(--bone-400); }
+  .btn--ghost:hover { border-color: #5a4f44; color: var(--bone-300); background:transparent; }
+  .row { display:flex; gap:14px; align-items:center; }
+  .label { font-family: var(--font-mono); font-size:10px; letter-spacing:.18em; text-transform:uppercase; color: var(--ink-edge-3); width:80px; }
+</style>
+</head>
+<body>
+  <div class="row"><div class="label">Primary</div><a class="btn">Notify Me</a><a class="btn" style="background: rgba(74,122,53,.20);">Hover</a></div>
+  <div class="row"><div class="label">Long</div><a class="btn" style="padding:12px 64px;">Learn More</a></div>
+  <div class="row"><div class="label">Ghost</div><a class="btn btn--ghost">Read Dispatch</a></div>
+</body>
+</html>

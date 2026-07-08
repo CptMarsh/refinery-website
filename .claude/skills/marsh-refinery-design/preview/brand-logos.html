@@ -1,0 +1,247 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Brand — Logos" subtitle="Barrel-and-tentacles mark on three grounds" viewport="700x200" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Brand — Lockups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin:0; padding:32px; background: var(--ink-page); font-family: var(--font-ui); }
+  .grid { display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+  .cell { border:1px solid var(--ink-edge); padding:32px 28px; min-height: 180px;
+          display:flex; align-items:center; justify-content:center; position:relative; }
+  .cell.dark { background: var(--ink-page); }
+  .cell.surface { background: var(--ink-surface); }
+  .cell.bone { background: var(--bone-200); }
+  .cell.signal { background: var(--brand-primary); }
+  .cell .tag { position:absolute; top:10px; left:12px;
+    font-size:9px; letter-spacing:.30em; text-transform:uppercase; opacity:.55; }
+  .cell.dark .tag, .cell.surface .tag { color: var(--bone-400); }
+  .cell.bone .tag { color: #4a3f33; }
+  .cell.signal .tag { color: var(--bone-200); }
+
+  /* ---------- Lockup primitives ---------- */
+  .mark { width:64px; height:64px; object-fit:contain; }
+  .mark.sm { width:36px; height:36px; }
+  .mark.lg { width:92px; height:92px; }
+
+  .wordmark {
+    font-family: 'Inter', var(--font-ui);
+    font-weight: 900;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--bone-200);
+    line-height: 1;
+  }
+  .wordmark.bone-on { color: #1e1a14; }
+  .wordmark.signal-on { color: var(--bone-100); }
+  .wordmark .article {
+    display:block;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: .50em;
+    color: var(--moss-500);
+    margin-bottom: 8px;
+  }
+  .wordmark.bone-on .article { color: var(--brand-primary); }
+  .wordmark.signal-on .article { color: var(--bone-300); }
+  .wordmark .name { font-size: 22px; }
+  .wordmark .name .amp { color: var(--moss-500); font-weight: 500; padding: 0 .35em; }
+  .wordmark.bone-on .name .amp { color: var(--brand-primary); }
+  .wordmark.signal-on .name .amp { color: var(--bone-300); }
+
+  /* ---------- 1: Stacked primary ---------- */
+  .lockup-stack { display:flex; flex-direction:column; align-items:center; gap:14px; }
+  .lockup-stack .ornament { display:flex; align-items:center; gap:10px; opacity:.7; }
+  .lockup-stack .ornament .h { width:34px; height:1px; background: var(--moss-500); }
+  .lockup-stack .ornament .d { width:5px; height:5px; transform: rotate(45deg); background: var(--moss-500); }
+  .cell.bone .lockup-stack .ornament .h,
+  .cell.bone .lockup-stack .ornament .d { background: var(--brand-primary); }
+  .cell.signal .lockup-stack .ornament .h,
+  .cell.signal .lockup-stack .ornament .d { background: var(--bone-200); opacity:.6; }
+
+  /* ---------- 2: Horizontal lockup ---------- */
+  .lockup-row { display:flex; align-items:center; gap: 18px; }
+  .lockup-row .divider { width:1px; height: 56px; background: var(--ink-edge); }
+  .cell.bone .lockup-row .divider { background: #4a3f33; opacity:.4; }
+  .cell.signal .lockup-row .divider { background: var(--bone-200); opacity:.35; }
+
+  /* ---------- 3: Monogram ---------- */
+  .monogram {
+    width: 96px; height: 96px;
+    border: 1px solid var(--moss-600);
+    display:flex; align-items:center; justify-content:center;
+    font-family: 'Inter', var(--font-ui);
+    font-weight: 900; font-size: 38px;
+    letter-spacing: -.04em;
+    color: var(--bone-200);
+    position: relative;
+  }
+  .monogram::before, .monogram::after {
+    content:""; position:absolute; width:6px; height:6px;
+    background: var(--moss-500); transform: rotate(45deg);
+  }
+  .monogram::before { top: -3.5px; left: -3.5px; }
+  .monogram::after { bottom: -3.5px; right: -3.5px; }
+  .cell.bone .monogram { border-color: var(--brand-primary); color: #1e1a14; }
+  .cell.bone .monogram::before, .cell.bone .monogram::after { background: var(--brand-primary); }
+  .cell.signal .monogram { border-color: var(--bone-200); color: var(--bone-100); }
+  .cell.signal .monogram::before, .cell.signal .monogram::after { background: var(--bone-200); }
+
+  /* ---------- 4: Stamp / seal ---------- */
+  .stamp {
+    width: 132px; height: 132px;
+    border: 1px solid var(--moss-600);
+    border-radius: 50%;
+    display:flex; align-items:center; justify-content:center;
+    position: relative;
+  }
+  .stamp::after {
+    content:""; position:absolute; inset: 6px;
+    border: 1px solid var(--moss-700);
+    border-radius: 50%;
+  }
+  .stamp .inner-mark { width: 56px; height:56px; object-fit:contain; position: relative; z-index:1; }
+  .stamp .ring-text {
+    position:absolute; inset:0;
+    font-size: 9px; letter-spacing: .30em; text-transform: uppercase;
+    color: var(--moss-500);
+  }
+  .stamp .ring-text span {
+    position:absolute; left:50%; top:6px;
+    transform: translateX(-50%);
+    font-weight: 600;
+  }
+  .stamp .ring-text span.btm {
+    top: auto; bottom: 6px;
+    color: var(--bone-400);
+    font-weight: 500;
+    letter-spacing: .25em;
+  }
+  .cell.bone .stamp { border-color: var(--brand-primary); }
+  .cell.bone .stamp::after { border-color: rgba(1,90,6,.4); }
+  .cell.bone .stamp .ring-text { color: var(--brand-primary); }
+  .cell.bone .stamp .ring-text span.btm { color: #4a3f33; }
+  .cell.signal .stamp { border-color: var(--bone-200); }
+  .cell.signal .stamp::after { border-color: rgba(212,201,176,.45); }
+  .cell.signal .stamp .ring-text { color: var(--bone-200); }
+  .cell.signal .stamp .ring-text span.btm { color: var(--bone-300); }
+
+  /* ---------- 5: Avatar tile ---------- */
+  .avatar-row { display:flex; gap: 14px; }
+  .avatar { width: 84px; height: 84px; display:flex; align-items:center; justify-content:center;
+            border: 1px solid var(--ink-edge); }
+  .avatar img { width: 56px; height: 56px; object-fit:contain; }
+  .a-1 { background: var(--ink-page); }
+  .a-2 { background: var(--brand-primary); border-color: var(--brand-primary); }
+  .a-3 { background: var(--bone-200); border-color: var(--bone-200); }
+
+  /* ---------- 6: Footer / chrome ---------- */
+  .footer-lockup { display:flex; align-items:center; gap: 12px;
+    font-family: 'Inter'; color: var(--bone-400);
+    font-size: 11px; letter-spacing: .30em; text-transform: uppercase; }
+  .footer-lockup img { width: 22px; height: 22px; }
+  .footer-lockup .sep { width: 4px; height:4px; background: var(--moss-500); transform: rotate(45deg); }
+  .footer-lockup .yr { color: var(--ink-edge-3); }
+</style>
+</head>
+<body>
+  <div class="grid">
+
+    <!-- 1: Stacked primary -->
+    <div class="cell dark">
+      <div class="tag">01 · Primary stacked</div>
+      <div class="lockup-stack">
+        <img class="mark lg" src="../assets/studio-barrel-cream.png" alt="" />
+        <div class="ornament"><div class="h"></div><div class="d"></div><div class="h"></div></div>
+        <div class="wordmark">
+          <span class="article">— THE —</span>
+          <span class="name">MARSH<span class="amp">◆</span>REFINERY</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2: Horizontal lockup -->
+    <div class="cell surface">
+      <div class="tag">02 · Horizontal lockup</div>
+      <div class="lockup-row">
+        <img class="mark" src="../assets/studio-barrel-cream.png" alt="" />
+        <div class="divider"></div>
+        <div class="wordmark">
+          <span class="article">THE</span>
+          <span class="name" style="font-size:18px">MARSH REFINERY</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3: Monogram -->
+    <div class="cell dark">
+      <div class="tag">03 · Monogram</div>
+      <div class="monogram">M<span style="color:var(--moss-500); font-size:.6em; padding: 0 2px;">/</span>R</div>
+    </div>
+
+    <!-- 4: Seal / stamp -->
+    <div class="cell dark">
+      <div class="tag">04 · Seal — for credits, end-cards</div>
+      <div class="stamp">
+        <div class="ring-text">
+          <span>· THE MARSH REFINERY ·</span>
+          <span class="btm">EST · MMXXV</span>
+        </div>
+        <img class="inner-mark" src="../assets/studio-barrel-cream.png" alt="" />
+      </div>
+    </div>
+
+    <!-- 5: Avatar / social -->
+    <div class="cell surface">
+      <div class="tag">05 · Avatar tiles (social, favicon)</div>
+      <div class="avatar-row">
+        <div class="avatar a-1"><img src="../assets/studio-barrel-cream.png" alt="" /></div>
+        <div class="avatar a-2"><img src="../assets/studio-barrel-cream.png" alt="" /></div>
+        <div class="avatar a-3"><img src="../assets/studio-barrel-green.png" alt="" /></div>
+      </div>
+    </div>
+
+    <!-- 6: Footer chrome -->
+    <div class="cell dark">
+      <div class="tag">06 · Chrome / footer</div>
+      <div class="footer-lockup">
+        <img src="../assets/studio-barrel-cream.png" alt="" />
+        <span>THE MARSH REFINERY</span>
+        <span class="sep"></span>
+        <span class="yr">MMXXV</span>
+      </div>
+    </div>
+
+    <!-- 7: On bone -->
+    <div class="cell bone">
+      <div class="tag">07 · On bone</div>
+      <div class="lockup-stack">
+        <img class="mark lg" src="../assets/studio-barrel-green.png" alt="" />
+        <div class="ornament"><div class="h"></div><div class="d"></div><div class="h"></div></div>
+        <div class="wordmark bone-on">
+          <span class="article">— THE —</span>
+          <span class="name">MARSH<span class="amp">◆</span>REFINERY</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8: On signal green -->
+    <div class="cell signal">
+      <div class="tag">08 · On #015a06 signal</div>
+      <div class="lockup-stack">
+        <img class="mark lg" src="../assets/studio-barrel-cream.png" alt="" />
+        <div class="ornament"><div class="h"></div><div class="d"></div><div class="h"></div></div>
+        <div class="wordmark signal-on">
+          <span class="article">— THE —</span>
+          <span class="name">MARSH<span class="amp">◆</span>REFINERY</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

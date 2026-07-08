@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Components — Card & Frame" subtitle="Image frame + game info card" viewport="700x340" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Components — Card &amp; Frame</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin:0; padding:28px; background: var(--ink-page); display:grid; grid-template-columns: 1fr 1fr; gap:24px; }
+  .frame { border:1px solid var(--ink-edge); box-shadow: 0 0 60px rgba(0,0,0,.8); aspect-ratio: 3/4;
+    background: linear-gradient(180deg, #0c1208 0%, #050505 60%, #0e0a06 100%); position:relative; overflow:hidden; }
+  .frame::after { content:""; position:absolute; inset:0;
+    background: radial-gradient(circle at 50% 35%, rgba(107,143,78,.08), transparent 70%); }
+  .card { border:1px solid var(--ink-edge); padding:20px; display:flex; flex-direction:column; gap:12px;
+    background: rgba(13,11,8,.4); }
+  .tag { display:inline-block; padding:4px 10px; font-size:10px; letter-spacing:.18em; text-transform:uppercase;
+    color: var(--moss-500); border:1px solid var(--moss-700); }
+  .h2 { font-family: var(--font-ui); font-weight:900; font-size:22px; letter-spacing:.08em; text-transform:uppercase; color: var(--bone-200); margin:0; }
+  .body { font-style: italic; font-size:13px; line-height:1.6; color: var(--bone-400); margin:0; }
+  .rule { width:36px; height:1px; background: var(--moss-fill-rule); margin: 4px 0; }
+  .label { position:absolute; top:8px; left:10px; font-size:9px; letter-spacing:.30em; text-transform:uppercase; color: var(--moss-500); opacity:.6; z-index:2; }
+</style>
+</head>
+<body>
+  <div class="frame"><div class="label">Image Frame</div></div>
+  <div class="card">
+    <div><span class="tag">Co-op</span> <span class="tag">Horror</span></div>
+    <div class="h2">Gravekeepers</div>
+    <div class="rule"></div>
+    <p class="body">You're maintenance workers in a haunted graveyard. Do your job, survive the night, extract alive.</p>
+  </div>
+</body>
+</html>

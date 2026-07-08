@@ -1,0 +1,266 @@
+/* ============================================================
+   The Marsh Refinery — Colors & Type
+   Source of truth: CptMarsh/refinery-website (Tailwind tokens)
+   Look: gothic / occult-industrial · Voice: comic / pulp horror
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ---------- Color: Ink (deep blacks / page) ---------- */
+  --ink-void:        #050505; /* deepest pit */
+  --ink-page:        #080808; /* body bg                       */
+  --ink-surface:     #0d0b08; /* cards, inputs                 */
+  --ink-rule:        #1e1a14; /* hairline dividers, borders    */
+  --ink-edge:        #2a2218; /* card / image borders          */
+  --ink-edge-2:      #3a3028; /* hover border                  */
+  --ink-edge-3:      #4a3f33; /* footer text, disabled         */
+
+  /* ---------- Color: Bone (warm cream foreground) ---------- */
+  --bone-100:        #f0e7d2; /* brightest cream (rare)        */
+  --bone-200:        #d4c9b0; /* primary heading color         */
+  --bone-300:        #c8b89a; /* primary body / strong text    */
+  --bone-400:        #8a7d6a; /* muted body / italics          */
+  --bone-500:        #6b6052; /* very muted                    */
+
+  /* ---------- Color: Moss (the only accent) ---------- */
+  --moss-bright:     #8aae6b; /* hover / active glow           */
+  --moss-500:        #6b8f4e; /* primary accent (text+rule)    */
+  --moss-600:        #4a7a35; /* button border / strong accent */
+  --moss-700:        #2a3a20; /* tag border / dim accent       */
+  --moss-glow:       rgba(107, 143, 78, 0.15);
+  --moss-fill-soft:  rgba(74, 122, 53, 0.20); /* hover fill    */
+  --moss-fill-rule:  rgba(74, 122, 53, 0.50);
+  --moss-rule-40:    rgba(74, 122, 53, 0.40); /* underline     */
+
+  /* ---------- Color: Status (sparing) ---------- */
+  --blood:           #7a2a1f; /* destructive / warning         */
+  --rust:            #a45a3a; /* warm utility (very rare)      */
+
+  /* ---------- Logo / Brand specific ---------- */
+  --brand-primary:   #015a06; /* MAIN BRAND GREEN — saturated, the studio's stamp.
+                                 Use for: signature surfaces (occasional accent
+                                 panel, splash, sticker, social avatar bg, print).
+                                 Pair w/ bone-200 type. Never as a flat page bg. */
+  --brand-green-deep: #0e4a16; /* logo-tinted dark green (mark fill, print plate)*/
+
+  /* ---------- Semantic aliases ---------- */
+  --bg:              var(--ink-page);
+  --bg-elev:         var(--ink-surface);
+  --fg:              var(--bone-300);
+  --fg-strong:       var(--bone-200);
+  --fg-muted:        var(--bone-400);
+  --fg-dim:          var(--ink-edge-3);
+  --border:          var(--ink-edge);
+  --border-soft:     var(--ink-rule);
+  --accent:          var(--moss-500);
+  --accent-strong:   var(--moss-600);
+  --accent-soft:     var(--moss-700);
+  --signal:          var(--brand-primary); /* the loud stamp green             */
+
+  /* ---------- Typography (font families) ---------- */
+  /* Type system (Pairing A): 'Inter' for display + UI/labels (900 caps, wide
+     tracking) AND for the in-fiction body voice (italic 400), 'JetBrains
+     Mono' for mono. One family, free via Google Fonts. */
+  --font-display:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-ui:         'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body:       'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:       ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  /* ---------- Type sizes ---------- */
+  --t-display:       clamp(2rem, 9vw, 9rem); /* @kind font */  /* hero title */
+  --t-h1:            clamp(1.75rem, 5vw, 3rem); /* @kind font */ /* section title */
+  --t-h2:            1.875rem;                 /* 30px          */
+  --t-h3:            1.25rem;                  /* 20px          */
+  --t-body:          1rem;                     /* 16px          */
+  --t-small:         0.875rem;                 /* 14px          */
+  --t-xs:            0.75rem;                  /* 12px / labels */
+
+  /* ---------- Tracking / weight ---------- */
+  --tr-tight:        0.02em;
+  --tr-wide:         0.08em;  /* display, titles               */
+  --tr-wider:        0.18em;  /* uppercase tags                */
+  --tr-widest:       0.30em;  /* eyebrow labels                */
+  --tr-ritual:       0.40em;  /* widest eyebrow tracking      */
+
+  /* ---------- Spacing scale (8px grid) ---------- */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  24px;
+  --s-6:  32px;
+  --s-7:  48px;
+  --s-8:  64px;
+  --s-9:  96px;
+  --s-10: 144px; /* section padding y                          */
+
+  /* ---------- Radii (almost square — gothic) ---------- */
+  --r-0:  0px;     /* default — no rounding on most surfaces  */
+  --r-1:  2px;
+  --r-2:  4px;
+  --r-3:  8px;
+  --r-full: 9999px;
+
+  /* ---------- Shadows / glow ---------- */
+  --shadow-key-art:  0 0 60px rgba(0,0,0,0.80);   /* image frame  */
+  --shadow-display:  0 2px 40px rgba(0,0,0,0.90), 0 0 60px var(--moss-glow);
+  --vignette:        radial-gradient(ellipse at center, transparent 40%, #000 100%); /* @kind other */
+  --texture-dust:    radial-gradient(circle, var(--bone-300) 1px, transparent 1px);
+  --texture-size:    40px 40px;
+  --texture-opacity: 0.06; /* @kind other */
+
+  /* ---------- Motion ---------- */
+  --ease-default:    cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --dur-fast:        200ms; /* @kind other */
+  --dur-default:     300ms; /* @kind other */ /* link/border hover transitions */
+  --dur-slow:        500ms; /* @kind other */
+}
+
+/* ============================================================
+   SEMANTIC ELEMENT STYLES
+   ============================================================ */
+
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-ui);
+  font-size: var(--t-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Display / hero — rare, single use */
+.t-display {
+  font-family: var(--font-ui);
+  font-weight: 900;
+  font-size: var(--t-display);
+  line-height: 0.95;
+  letter-spacing: var(--tr-wide);
+  text-transform: uppercase;
+  color: var(--bone-200);
+  text-shadow: var(--shadow-display);
+}
+
+/* H1 — section header */
+h1, .t-h1 {
+  font-family: var(--font-ui);
+  font-weight: 900;
+  font-size: var(--t-h1);
+  line-height: 1.1;
+  letter-spacing: var(--tr-wide);
+  text-transform: uppercase;
+  color: var(--bone-200);
+  margin: 0;
+}
+
+/* H2 — sub-section */
+h2, .t-h2 {
+  font-family: var(--font-ui);
+  font-weight: 900;
+  font-size: var(--t-h2);
+  letter-spacing: var(--tr-wider);
+  text-transform: uppercase;
+  color: var(--bone-200);
+  margin: 0;
+}
+
+/* H3 — emphasised label */
+h3, .t-h3 {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: var(--t-h3);
+  letter-spacing: var(--tr-tight);
+  color: var(--bone-300);
+  margin: 0;
+}
+
+/* Eyebrow — small ritual labels above titles */
+.t-eyebrow {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: var(--t-xs);
+  letter-spacing: var(--tr-ritual);
+  text-transform: uppercase;
+  color: var(--moss-500);
+}
+
+/* Tag / pill — uppercase chip */
+.t-tag {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: var(--t-xs);
+  letter-spacing: var(--tr-wider);
+  text-transform: uppercase;
+  color: var(--moss-500);
+}
+
+/* Body paragraph — Inter italic for narrative voice (Pairing A) */
+p, .t-body {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: var(--t-body);
+  line-height: 1.7;
+  color: var(--bone-400);
+  text-wrap: pretty;
+  margin: 0;
+}
+
+/* Strong body — non-italic for facts, status, dates (roman Inter) */
+.t-strong {
+  font-family: var(--font-ui);
+  font-style: normal;
+  font-size: var(--t-body);
+  font-weight: 600;
+  letter-spacing: var(--tr-tight);
+  color: var(--bone-300);
+}
+
+/* Small caption */
+small, .t-small {
+  font-size: var(--t-small);
+  color: var(--bone-400);
+}
+
+/* Status / metadata — uppercase, very wide */
+.t-meta {
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: var(--tr-widest);
+  text-transform: uppercase;
+  color: var(--moss-500);
+}
+
+/* Link — underline with moss */
+a, .t-link {
+  color: var(--bone-300);
+  text-decoration: underline;
+  text-decoration-color: var(--moss-rule-40);
+  text-underline-offset: 4px;
+  letter-spacing: var(--tr-wider);
+  text-transform: uppercase;
+  font-size: var(--t-xs);
+  transition: text-decoration-color var(--dur-default) var(--ease-default);
+}
+a:hover, .t-link:hover {
+  text-decoration-color: var(--moss-600);
+}
+
+/* Inline code / mono */
+code, .t-mono {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: var(--bone-300);
+  background: var(--ink-surface);
+  padding: 2px 6px;
+  border: 1px solid var(--ink-rule);
+}
+
+/* Horizontal rule — short hairline, optionally with diamond */
+hr, .t-rule {
+  border: 0;
+  height: 1px;
+  width: 48px;
+  background: var(--moss-fill-rule);
+  margin: var(--s-5) 0;
+}

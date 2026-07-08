@@ -1,0 +1,133 @@
+<!doctype html>
+<!-- @dsCard group="Type" name="type-pairing" subtitle="The chosen type system — Inter / Inter italic" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Type — System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin:0; padding:32px; background: var(--ink-page); }
+  .grid { display:grid; grid-template-columns: 1fr; gap: 24px; }
+  .pair {
+    border: 1px solid var(--ink-edge);
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 32px;
+  }
+  .meta { border-right: 1px solid var(--ink-rule); padding-right: 24px; }
+  .meta .num {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: .30em; color: var(--moss-500);
+    text-transform: uppercase; font-weight: 600;
+  }
+  .meta h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; letter-spacing: .18em; color: var(--bone-200);
+    text-transform: uppercase; font-weight: 800;
+    margin: 8px 0 14px;
+  }
+  .meta .why {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-size: 12px; line-height: 1.6;
+    color: var(--bone-400);
+    margin: 0;
+  }
+  .meta .stack {
+    margin-top: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; line-height: 1.6;
+    color: var(--bone-300);
+  }
+  .meta .stack span { color: var(--moss-500); }
+  .meta .pick {
+    display: inline-block;
+    margin-top: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 9px; letter-spacing: .30em;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border: 1px solid var(--moss-600);
+    color: var(--moss-500);
+  }
+  .meta .pick.rec { background: var(--brand-primary); border-color: var(--brand-primary); color: var(--bone-100); }
+
+  .specimen { display: flex; flex-direction: column; gap: 14px; }
+  .specimen .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: .40em;
+    text-transform: uppercase;
+    color: var(--moss-500);
+    font-weight: 500;
+  }
+
+  /* Pair A: Inter only (current) */
+  .pair-a .display { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 64px; line-height: .92; letter-spacing: .08em; text-transform: uppercase; color: var(--bone-200); }
+  .pair-a .body { font-family: 'Inter', sans-serif; font-style: italic; font-size: 16px; line-height: 1.7; color: var(--bone-400); max-width: 56ch; }
+
+  /* Pair B: Inter + Instrument Serif italic body */
+  .pair-b .display { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 64px; line-height: .92; letter-spacing: .08em; text-transform: uppercase; color: var(--bone-200); }
+  .pair-b .body { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px; line-height: 1.45; color: var(--bone-300); max-width: 50ch; font-weight: 400; }
+
+  /* Pair C: Newsreader display + Inter UI */
+  .pair-c .display { font-family: 'Newsreader', serif; font-weight: 600; font-size: 78px; line-height: .92; letter-spacing: -.01em; color: var(--bone-200); font-style: normal; }
+  .pair-c .display em { font-style: italic; font-weight: 400; color: var(--moss-500); }
+  .pair-c .body { font-family: 'Newsreader', serif; font-style: italic; font-size: 19px; line-height: 1.55; color: var(--bone-300); max-width: 52ch; font-weight: 400; }
+  .pair-c .label { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: .30em; text-transform: uppercase; color: var(--moss-500); font-weight: 500; }
+
+  /* Pair D: Inter + EB Garamond italic */
+  .pair-d .display { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 64px; line-height: .92; letter-spacing: .08em; text-transform: uppercase; color: var(--bone-200); }
+  .pair-d .body { font-family: 'EB Garamond', serif; font-style: italic; font-size: 18px; line-height: 1.6; color: var(--bone-300); max-width: 54ch; font-weight: 400; }
+
+  .header {
+    display: flex; align-items: baseline; gap: 18px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 8px;
+  }
+  .header h1 {
+    font-size: 14px; letter-spacing: .30em; text-transform: uppercase;
+    color: var(--bone-200); font-weight: 800; margin: 0;
+  }
+  .header p {
+    font-style: italic; font-size: 12px;
+    color: var(--bone-400); margin: 0;
+  }
+  .header .rule { flex: 1; height:1px; background: var(--ink-rule); }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>Type system</h1>
+    <div class="rule"></div>
+    <p>Inter, doing double duty.</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- A: current -->
+    <div class="pair pair-a">
+      <div class="meta">
+        <div class="num">A · Chosen</div>
+        <h3>Inter / Inter italic</h3>
+        <p class="why">The chosen system. Display + body in the same family — clean, free, one webfont to load. Italic Inter carries the in-fiction body voice.</p>
+        <div class="stack">
+          display: <span>Inter 900</span><br/>
+          body:    <span>Inter italic 400</span><br/>
+          mono:    <span>JetBrains Mono</span>
+        </div>
+        <div class="pick rec">Pick this one</div>
+      </div>
+      <div class="specimen">
+        <div class="eyebrow">— Punch In —</div>
+        <div class="display">GRAVEKEEPERS</div>
+        <p class="body">You are maintenance workers in a haunted graveyard. Do your job, survive the night, extract alive. Even if you die, you're still in the game.</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

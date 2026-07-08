@@ -1,0 +1,29 @@
+<!doctype html>
+<!-- @dsCard group="Type" name="Type — Display" subtitle="Hero display — Inter 900, .08em, moss glow" viewport="700x190" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Type — Display</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin:0; padding: 28px 32px; background: var(--ink-page); }
+  .stack { display:flex; flex-direction:column; gap: 14px; }
+  .ornament { display:flex; align-items:center; gap:14px; opacity:.45; }
+  .ornament .h { width:48px; height:1px; background: var(--moss-500); }
+  .ornament .d { width:6px; height:6px; transform: rotate(45deg); background: var(--moss-500); }
+  .display { font-family: var(--font-ui); font-weight:900; font-size:64px; line-height:.95;
+    letter-spacing:.08em; text-transform:uppercase; color: var(--bone-200);
+    text-shadow: 0 2px 40px rgba(0,0,0,.9), 0 0 60px var(--moss-glow); }
+  .meta { font-family: var(--font-ui); font-size:11px; letter-spacing:.30em; text-transform:uppercase; color: var(--moss-500); }
+  .row { display:flex; gap:18px; color: var(--bone-400); font-size:12px; letter-spacing:.18em; text-transform:uppercase; }
+  .row span:not(:last-child)::after { content:"·"; padding-left:18px; color: var(--ink-edge-3); }
+</style>
+</head>
+<body>
+  <div class="stack">
+    <div class="ornament"><div class="h"></div><div class="d"></div><div class="h"></div></div>
+    <div class="display">GRAVEKEEPERS</div>
+    <div class="row"><span>Inter 900</span><span>clamp(2rem, 9vw, 9rem)</span><span>tracking 0.08em</span><span>uppercase</span></div>
+  </div>
+</body>
+</html>

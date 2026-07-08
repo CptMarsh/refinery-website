@@ -58,7 +58,7 @@ export default function HeroSection() {
         </div>
 
         {/* Tagline */}
-        <p className="text-[#8a7d6a] text-base md:text-lg max-w-md leading-relaxed italic">
+        <p className="font-body text-[#8a7d6a] text-base md:text-lg max-w-md leading-relaxed italic">
           Make it through the night. Or don't.
         </p>
 

@@ -76,7 +76,22 @@ export default function StudioFooter() {
 
         <div className="flex flex-col items-center gap-2">
           <div className="flex items-center gap-3">
-            <img src={`${import.meta.env.BASE_URL}studio-logo.png`} alt="The Marsh Refinery" className="w-6 h-6 object-contain opacity-60" style={{filter: "brightness(0) saturate(100%) invert(85%) sepia(20%) saturate(350%) hue-rotate(5deg) brightness(90%)"}} />
+            <span
+              role="img"
+              aria-label="The Marsh Refinery"
+              className="inline-block w-6 h-6 shrink-0"
+              style={{
+                backgroundColor: "#4a3f33",
+                WebkitMaskImage: `url(${import.meta.env.BASE_URL}studio-barrel.png)`,
+                maskImage: `url(${import.meta.env.BASE_URL}studio-barrel.png)`,
+                WebkitMaskRepeat: "no-repeat",
+                maskRepeat: "no-repeat",
+                WebkitMaskPosition: "center",
+                maskPosition: "center",
+                WebkitMaskSize: "contain",
+                maskSize: "contain",
+              }}
+            />
             <span className="text-[#4a3f33] text-sm tracking-widest uppercase">The Marsh Refinery</span>
           </div>
           <p className="text-[#2a2218] text-xs tracking-wider">
