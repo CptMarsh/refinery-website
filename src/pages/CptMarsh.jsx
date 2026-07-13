@@ -92,11 +92,6 @@ export default function CptMarsh() {
           Indie Game Dev
         </p>
 
-        {/* Bio */}
-        <p className="font-body text-bone-400 text-base leading-relaxed italic mt-4 max-w-sm">
-          Building Gravekeepers. Make it through the night — or don't.
-        </p>
-
         {/* Ornament */}
         <Ornament className="my-8" />
 
