@@ -8,9 +8,9 @@ export default function PageNotFound() {
       <div className="relative z-10 flex flex-col items-center">
         <Eyebrow className="mb-8">Quoth the Server</Eyebrow>
 
-        <Ornament opacity={0.3} />
+        <Ornament opacity={0.3} className="mb-6" />
 
-        <h1 className="font-display font-black text-[length:clamp(4rem,18vw,12rem)] text-bone-200 leading-none tracking-wide uppercase">
+        <h1 className="font-display font-black text-[length:clamp(4rem,18vw,12rem)] text-bone-200 leading-none uppercase">
           404
         </h1>
 
