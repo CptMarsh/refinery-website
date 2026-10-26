@@ -44,17 +44,15 @@
  */
 
 import Home from './pages/Home';
-import ComingSoon from './pages/ComingSoon';
 import CptMarsh from './pages/CptMarsh';
 
 
 export const PAGES = {
-    "ComingSoon": ComingSoon,
+    "Home": Home,
     "cptmarsh": CptMarsh,
-    // "Home": Home,
 }
 
 export const pagesConfig = {
-    mainPage: "ComingSoon",
+    mainPage: "Home",
     Pages: PAGES,
 };
