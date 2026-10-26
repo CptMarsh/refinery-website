@@ -81,7 +81,6 @@ export default function CptMarsh() {
           style={{
             fontSize: "clamp(1.75rem, 6vw, 3rem)",
             letterSpacing: "0.08em",
-            textShadow: "0 2px 40px rgba(0,0,0,0.9), 0 0 60px rgba(107,143,78,0.15)",
           }}
         >
           Omer Schapiro

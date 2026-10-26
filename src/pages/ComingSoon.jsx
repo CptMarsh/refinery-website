@@ -39,8 +39,7 @@ export default function ComingSoon() {
             className="font-display font-black text-bone-200 leading-none mb-6 uppercase w-full"
             style={{
               fontSize: "clamp(2rem, 9vw, 9rem)",
-              letterSpacing: "0.08em",
-              textShadow: "0 2px 40px rgba(0,0,0,0.9), 0 0 60px rgba(107,143,78,0.15)"
+              letterSpacing: "0.08em"
             }}
           >
             GRAVEKEEPERS
