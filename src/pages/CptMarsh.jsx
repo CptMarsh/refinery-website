@@ -6,7 +6,7 @@ const tileClass = "w-full justify-start gap-4 px-5";
 export default function CptMarsh() {
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center overflow-hidden bg-background font-ui">
-      <BackgroundLayers overlay={false} vignette />
+      <BackgroundLayers overlay={false} />
 
       <div className="relative z-10 flex flex-col items-center w-full max-w-md py-16">
         <Eyebrow className="mb-8">The Marsh Refinery</Eyebrow>

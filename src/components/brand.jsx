@@ -73,8 +73,8 @@ export const TextLink = ({ className, ...props }) => (
 
 // Signature showcase stack: ink-page base, optional muted video, dot dust, black overlay.
 // Place inside a `relative` container.
-/** @param {{ videoSrc?: string, videoTitle?: string, overlay?: boolean, vignette?: boolean }} props */
-export const BackgroundLayers = ({ videoSrc, videoTitle = "Background video", overlay = true, vignette = false }) => (
+/** @param {{ videoSrc?: string, videoTitle?: string, overlay?: boolean }} props */
+export const BackgroundLayers = ({ videoSrc, videoTitle = "Background video", overlay = true }) => (
   <>
     <div className="absolute inset-0 overflow-hidden bg-ink-page pointer-events-none">
       {videoSrc && (
@@ -88,7 +88,6 @@ export const BackgroundLayers = ({ videoSrc, videoTitle = "Background video", ov
       <div className="absolute inset-0 bg-dust opacity-texture" />
     </div>
     {overlay && <div className="absolute inset-0 bg-black opacity-overlay pointer-events-none" />}
-    {vignette && <div className="absolute inset-0 bg-vignette pointer-events-none" />}
   </>
 );
 
