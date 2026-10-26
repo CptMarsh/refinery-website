@@ -1,215 +1,131 @@
-# The Marsh Refinery — Design System
-
 > *Make it through the night. Or don't.*
 
-The Marsh Refinery is an independent game studio. Their first announced title is **Gravekeepers** — a co-op horror game where players are *"maintenance workers in a haunted graveyard. Do your job, survive the night, extract alive. But don't worry — even if you die, you're still in the game!"* The studio's *look* is gothic, occult-industrial; the *voice* is comic/pulp horror — EC Comics gallows humor, a wisecracking graveyard-shift foreman, spooky-but-fun rather than solemn. (Earlier drafts of this system leaned monastic and grim; that register has been lightened — see Content fundamentals.)
+The Marsh Refinery is an independent game studio. Its first announced title is **Gravekeepers** — a co-op horror game where players are *"maintenance workers in a haunted graveyard. Do your job, survive the night, extract alive. But don't worry — even if you die, you're still in the game!"* The studio's **look** is gothic, occult-industrial; the **voice** is comic/pulp horror played deadpan — a graveyard-shift foreman who has seen it all.
 
-This design system captures that voice and the visual rules of the marketing site so you can extend it to new pages, decks, social posts, and pitch material without breaking the spell.
+Use this system for the marketing site and everything after it: new pages, decks, social posts, pitch material, credits. The brand is **dark only** — there is one theme.
 
----
+## Surfaces
 
-## Sources
-
-- **Codebase:** `CptMarsh/refinery-website` (master @ c17b31a) — React + Vite + Tailwind + shadcn/ui. The single live page composes `Navbar`, `HeroSection`, `GameTeaser`, `NewsletterSignup`, `StudioFooter`. Almost all visual choices live as inline Tailwind on those five files; tokens are NOT extracted into theme variables in the original (the shadcn `:root` defaults are unused — the site overrides everything inline). This file system reverse-engineers them.
-- **Brand marks (uploaded):** the studio mark — a refinery **barrel with cephalopod tentacles** pouring from its base (the industrial refinery + the creature in one glyph). Shipped as `studio-barrel-cream.png` / `-green.png` / `-gray.png`, tinted from a single white-on-transparent master. The earlier standalone octopus (`studio-logo-*.png`) is retired from the lockups but kept in `assets/` — it now lives *inside* the barrel.
-- **Live site context (from index.html metadata):** themarshrefinery.com, contact `omer.schapiro@themarshrefinery.com`, founder LinkedIn `omerschapiro`, Discord `54ChSunvEF`, YouTube `@marsh-refinery-studio`, itch.io `marsh-refinery.itch.io/gravekeepers`.
-
-No Figma, no slide deck, no docs site were attached.
-
----
-
-## Products represented
-
-There is **one** surface to design against:
-
-1. **Marketing website** — single-page studio + game landing. Hero with looping muted YouTube trailer behind a vignette, a teaser block for the game, a newsletter signup ("Punch In / Follow the Dig"), and a footer with social icons.
-
-The studio also ships a playable build on itch.io and a pitch deck (linked but not stored in repo). Those are the obvious next surfaces — both should follow this system.
+- **Marketing website** (themarshrefinery.com) — one page: `Navbar`, `HeroSection` (looping muted trailer), `GameTeaser`, `NewsletterSignup` ("Punch In / Follow the Dig"), `StudioFooter`. All five are components here.
+- **Pitch deck** — `SlideTemplate`, six 1920×1080 slides.
+- The playable build on itch.io, social avatars and print follow the same rules.
 
 ---
 
 ## Content fundamentals
 
-The voice is the most defining trait of the brand — and the dial here is deliberate. **Gravekeepers is co-op comic/pulp horror, but the comedy is deadpan, not zany.** The register is *indifference*: the studio treats a haunted graveyard as a night shift, and death as a scheduling problem. The humor lives in the underreaction — *"Make it through the night. Or don't."* — never in a bolted-on punchline. Think the dry flatness of a foreman who's seen it all and can't be bothered to be scared for you. (Earlier drafts of this system leaned monastic and grim; the fix is to make it *drier*, not sillier — see Content fundamentals.)
+The voice is the most defining trait of the brand, and the dial is deliberate. **Gravekeepers is co-op comic/pulp horror, but the comedy is deadpan, not zany.** The register is *indifference*: the studio treats a haunted graveyard as a night shift, and death as a scheduling problem. The humor lives in the underreaction — *"Make it through the night. Or don't."* — never in a bolted-on punchline.
 
-Rules:
+- **Deadpan, indifferent register.** Name actions plainly, like shift instructions: *"Punch In"*, *"Follow the Dig"*, *"Clock In"*, *"Descend"* (the scroll cue). Avoid both failure modes: scripture-toned commands (*"Bear Witness"*, *"Kneel"*) and zany punchlines (*"…you'll respawn as something worse!"*). If a line has to explain its own joke, cut the explanation — the flatness is the joke.
+- **Co-op camaraderie.** Speak to players as a team — *"you and your crew"*, *"nobody digs alone"*. Warmth is allowed; misery loves company.
+- **Second person to the crew; third person to the studio.** Game copy talks to the players (*"You're maintenance workers in a haunted graveyard"*). Studio copy says *"The Marsh Refinery"*, never "we".
+- **Short, flat, final.** *"Do your job. Survive the night. Extract alive."* Understatement beats overstatement.
+- **Exclamation points: almost never.** The one sanctioned exception is the game's own tone-breaker (*"…you're still in the game!"*). Don't add more.
+- **Italic = narrative voice.** Body paragraphs are italic (`t-body`). Facts — status, dates, numbers, names — are roman (`t-strong`).
+- **UPPERCASE LABELS.** Every nav label, button, tag, eyebrow, status key and footer heading is uppercase with wide tracking (`tr-wider` 0.18em to `tr-ritual` 0.40em), ≤ 4 words. Sentences are never uppercase.
+- **No emoji. Ever.** Thin SVG icons and the ornamental diamond only — the humor is in the words.
+- **Names and punctuation.** Em-dashes for the flat aside: *"Get dispatches from the Refinery — dev logs, reveals, release dates."* "The Marsh Refinery" always keeps its article — Title Case in body, UPPERCASE in chrome. "Gravekeepers" is one word, capitalised in body, UPPERCASE in titles.
+- **Tags** read like inscriptions: *"Co-op"*, *"Horror"*, *"Comedy"* — Title Case in source, uppercased by CSS.
 
-- **Deadpan, indifferent register.** The horror is routine; the studio can't be bothered to oversell it. The comedy is in the *underreaction* — death gets a shrug (*"Make it through the night. Or don't."*), not a scream and not a wisecrack. Name actions plainly, like shift instructions: *"Punch In"*, *"Follow the Dig"*, *"Clock In"*, *"Descend"* (scroll cue). Avoid two failure modes: presumptuous scripture-toned commands (*"Bear Witness"*, *"Kneel"*) on one side, and zany bolted-on punchlines (*"…you'll respawn as something worse!"*) on the other. If a line has to explain its own joke, cut the explanation — the flatness is the joke.
-- **Co-op camaraderie.** You and your crew are down in the dirt *together*. Speak to players as a team — *"you and your crew"*, *"nobody digs alone"*. Warmth is allowed now; horror is a group activity and misery loves company.
-- **Second person to the crew; third person to the studio.** Game copy talks to the players (*"You're maintenance workers in a haunted graveyard"*). Studio copy refers to itself by name (*"The Marsh Refinery"*), not "we".
-- **Short, flat, and final.** *"Do your job. Survive the night. Extract alive."* Three clauses, no embellishment, no rimshot. The dry aside is allowed if it stays deadpan (*"… or don't"*); a spelled-out gag is not. Understatement always beats overstatement here.
-- **Exclamation points: almost never.** The one sanctioned exception is the game's own tone-breaker (*"…you're still in the game!"*) — warmth that lands *because* everything around it is flat. Don't add more; a deadpan close hits harder.
-- **Italic = narrative voice.** Body paragraphs are italic by default — in-fiction, atmospheric, or the punchline. Roman type for facts (status, dates, numbers, names).
-- **UPPERCASE LABELS.** Every nav label, button, tag, eyebrow, status pill, and footer heading is uppercase with wide tracking (0.18em–0.40em). Long sentences are NOT uppercase — only the labels.
-- **No emoji. Ever.** Thin SVG icons + the ornamental diamond glyph only. (This rule survives the lighter tone — the humor is in the words, not in 💀.)
-- **Casing & punctuation specifics:**
-  - Em-dashes for the flat aside: *"Get dispatches from the Refinery — dev logs, reveals, release dates."*
-  - "The Marsh Refinery" — always with the article, Title Case in body, UPPERCASE in chrome.
-  - "Gravekeepers" — one word, capitalised in body, UPPERCASE in titles.
-- **Tag style.** Genre tags read like inscriptions: *"Co-op"*, *"Horror"*, *"Comedy"* — Title Case in source, rendered uppercase via CSS.
+Real copy to match:
 
-Writing checklist for a new sentence:
-1. Would a foreman who's seen it all say it flat, without flinching? If it's grim, dry it out; if it's zany, cut the gag.
-2. Is it a label? UPPERCASE, wide tracking, ≤ 4 words.
-3. Is it body? Italic, sentence case, short — setup then twist.
-4. Is it a fact (date, status, number)? Roman, sentence case, no decoration.
+| Where | Copy |
+| --- | --- |
+| Hero tagline | *Make it through the night. Or don't.* |
+| Teaser body | *Do your job, survive the night, extract alive.* |
+| Newsletter | PUNCH IN · FOLLOW THE DIG · *Get dispatches from the Refinery — dev logs, reveals, release dates.* |
+| Submitted | You're on the list. Dispatches to follow. |
+| 404 | QUOTH THE SERVER · *Nothing buried here.* · RETURN HOME |
+
+Checklist for a new line: would a foreman who's seen it all say it flat? If it's grim, dry it out; if it's zany, cut the gag. A label is UPPERCASE, wide-tracked, ≤ 4 words. Body is italic, sentence case, short. A fact is roman with no decoration.
 
 ---
 
 ## Visual foundations
 
-### Palette
+### Colour
 
-Three families, used in this priority:
+Four families, in this priority:
 
-1. **Ink** — `#080808` page, `#0d0b08` surface, `#1e1a14` rule, `#2a2218` border, `#3a3028` hover-border, `#4a3f33` dim text. Almost the whole UI lives here.
-2. **Bone** — warm cream foreground. `#d4c9b0` for headings, `#c8b89a` for strong body, `#8a7d6a` for muted/italic body, `#4a3f33` for footer-dim. Never pure white.
-3. **Moss** — the *only* accent for chrome. `#6b8f4e` for accent text + rules, `#4a7a35` for button borders + underlines, `#2a3a20` for tag borders, `rgba(74,122,53,0.15–0.20)` for hover fills and glow. Never used as a flat fill — only as borders, hairlines, and 15–20% alpha washes.
-4. **Brand Primary / Signal Green** — `#015a06` (token: `--brand-primary`). The studio's *loud stamp* — used full-strength on signature surfaces only: covers, splashes, social avatar backgrounds, sticker prints, section-divider slides. Pairs with bone-200 type. Never used as a page background or chrome border. The two greens (Moss vs. Signal) almost never appear in the same composition — Moss is whisper, Signal is shout.
+1. **Ink** — almost the whole UI. `ink-page` is the page (`bg`), `ink-surface` raises inputs and code (`bg-elev`), `ink-rule` draws chrome hairlines, `ink-edge` frames cards, images and inputs, `ink-edge-2` is the hover border and resting icon colour, `ink-edge-3` is placeholder and footer-dim text.
+2. **Bone** — warm cream type, never pure white. `bone-200` for headings, `bone-300` for strong body and input text, `bone-350` for the site's large italic ledes, `bone-400` for muted italic body.
+3. **Moss** — the *only* chrome accent. `moss-500` for accent text, eyebrows, tags and ornaments; `moss-600` for button borders, focus borders and hover underlines; `moss-700` for tag borders. Fills are only `moss-fill-soft` (20%) or `moss-glow` (15%) washes — moss is never a solid fill.
+4. **Signal green** — `brand-primary` is the studio's loud stamp: covers, splashes, section-divider slides, social avatar backgrounds, stickers, print. Pair it with `bone-200` or `bone-100` type. Never a page background or a chrome border. Moss is whisper, signal is shout — they almost never share a composition.
 
-There is no blue, no purple, no warm secondary. Don't introduce one. Status colors (destructive, warning) — if needed — should be a desaturated rust/blood (`#7a2a1f`) but the live site avoids them.
+There is no blue, no purple, no warm secondary; don't introduce one. `blood` and `rust` are provisional status colours the live site never uses — use `blood` as a fill or border with bone type on it, not as text.
 
-### Typography
+Legibility: `bone-100` to `bone-400`, `bone-350`, `moss-bright` and `moss-500` all pass 4.5:1 on `ink-page` and `ink-surface`. `bone-500` passes only at 24px+. `ink-edge-3`, `ink-edge-2` and `ink-edge` as text (placeholder, footer heading, footer icons, copyright) are below 3:1 exactly as the live site has them — keep them for decorative, non-essential text only.
 
-The codebase uses Tailwind defaults (system sans). That's a placeholder — the *intended* feel needs heavier display weight and warmer body. **Substitution flagged:**
+### Type
 
-- **Display / UI:** Inter (Google Fonts) at 900 / 600 / 500. Wide letter-spacing replaces serif gravitas.
-- **Optional serif accent:** Cormorant Garamond — for italic body, if the studio wants to lean more "monastic." Currently NOT in use; offered as the upgrade path.
+**Inter, doing double duty** — one free webfont (Google Fonts), loaded once — plus JetBrains Mono.
 
-Scale and tracking (see `colors_and_type.css`):
-- Display: clamp(2rem, 9vw, 9rem), 900-weight, uppercase, 0.08em tracking, soft moss glow
-- H1: clamp(1.75rem, 5vw, 3rem), 900, uppercase, 0.08em
-- Eyebrow: 12px, 500, 0.40em tracking, moss color
-- Body: 16px, italic, 1.7 line-height, bone-400
-- Tag: 12px, 500, 0.18em, uppercase
+- Display and section titles: Inter 900, uppercase, `tr-wide` 0.08em — `t-display` (fluid `t-display-size`, `shadow-display`, once per page) and `t-h1` (fluid `t-h1-size`). `t-h2` is 900 at 0.18em; `t-h3` is 600 sentence case.
+- Body voice: `t-body` — Inter italic 400, 16px, line-height 1.7, `bone-400`.
+- Facts: `t-strong` — roman 600, `bone-300`.
+- Labels: `t-eyebrow` (0.40em), `t-meta` (0.30em), `t-tag` and `t-link` (0.18em), `t-button` — all 12–13px uppercase, moss-500 (links bone-300 with a moss underline).
+- Mono: `t-mono` for code, hex values and metadata.
 
-> **Action item for the user:** confirm whether the studio plans to ship a custom font (e.g. an actual blackletter / engraved face for display). Inter is the closest free match to the current system-sans rendering; an upgrade to a real display face would dramatically lift the brand.
+No serif is in production. Inter stands in for a dedicated display face the studio hasn't chosen yet.
 
-### Spacing & rhythm
+### Spacing and layout
 
-- **8px grid.** All paddings/margins resolve to 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96 / 144.
-- Section vertical padding: `py-24` (96px). Hero is full viewport (`min-h-screen`).
-- Inner column max-width: `max-w-6xl` for content, `max-w-xl` for centered text blocks (newsletter), `max-w-md` for taglines.
-- Between elements inside a column: 16–24px. Stack rhythm uses ornamental rules (diamond + hairlines) at 32–48px breaks instead of bigger gaps.
+- **8px grid**: `s-1` 4px through `s-10` 144px. Sections pad `s-9` (96px) vertically; the hero is full viewport height, centred on both axes.
+- Content width: 1100px (`max-w-6xl`) for content, 600px for centred text blocks (newsletter), 480px for taglines.
+- Inside a column use 16–24px (`s-4`–`s-5`). At 32–48px breaks, use an `Ornament` instead of a bigger gap.
+- Navbar fixed and full-bleed; footer centred with a single `ink-rule` hairline on top. On mobile, columns stack and type scales with the clamps.
 
 ### Backgrounds
 
-The hero combines four layers — this is the brand's signature stack. Use it on any "showcase" surface:
+The signature stack (`BackgroundLayers`) for any showcase surface:
 
-1. Black base (`#080808`).
-2. Optional muted/looping video or hero image, scaled `1.5×`, no controls, no audio.
-3. **Dot dust** — `radial-gradient(circle, #c8b89a 1px, transparent 1px)` at 40px tiling, 6% opacity. This subtle bone-colored noise appears on multiple sections; it's the "incense haze."
-4. Black overlay at 60% opacity for legibility.
-5. **Vignette** — `radial-gradient(ellipse at center, transparent 40%, #000 100%)`.
+1. `ink-page` base.
+2. Optional muted, looping, control-less video or still, scaled 1.5×.
+3. **Dot dust** — a 1px `bone-300` dot on a 40px tile at `texture-opacity` (6%). It reads as grain or incense haze at a distance; it also sits on the teaser and on every slide.
+4. Black overlay at `overlay-opacity` (60%) for legibility.
 
-No gradients between brand colors. No photographs of people. No illustrations beyond the cuttlefish mark and the Gravekeepers key art.
+No gradients between brand colours. No photographs of people. No illustration beyond the mark and the Gravekeepers key art.
 
-### Borders, rules, ornaments
+### Borders, ornaments, radii, shadows
 
-- **Hairlines.** 1px, never thicker. Color = `#1e1a14` for chrome dividers, `#4a7a35` for accent rules.
-- **Ornamental rule.** A repeating motif: short hairline — small rotated square (diamond) — short hairline. The diamond is `1.5px × 1.5px`, rotated 45°, moss color, 30–50% opacity. Use it to frame display titles and section headers.
-- **Card borders.** Image-frames use `border: 1px solid #2a2218` plus `box-shadow: 0 0 60px rgba(0,0,0,0.8)`. The shadow looks like the card sits in a candlelit alcove.
-- **No rounded corners** on most surfaces. Buttons, inputs, tags, image frames are all square. The shadcn `--radius: 0.5rem` is shipped but unused in the marketing layer.
+- **Hairlines are 1px, never thicker.** `ink-rule` for chrome dividers, `moss-600` or `moss-fill-rule` for accent rules.
+- **The ornament** — hairline · rotated square · hairline, moss-500 at 30–50% opacity — frames display titles and section headers.
+- **Square corners** everywhere: `r-0` on buttons, inputs, tags, cards and frames. `r-full` only for status pills and the seal.
+- **Cards are framed objects**: transparent (the dust shows through), 1px `ink-edge` border, `shadow-key-art` as a ground shadow — a candlelit alcove. Never a filled card surface.
 
-### Cards
+### States and motion
 
-Cards are essentially "framed objects" — square, 1px border in `#2a2218`, no fill (transparent over the dust texture), with an outer black glow that acts as ground-shadow. Avoid filled card surfaces; let the page bleed through.
-
-### Buttons
-
-One button pattern only — outline + moss text. Square corners.
-
-```
-border: 1px solid #4a7a35;
-color: #6b8f4e;
-padding: 12px 32px;
-font-size: 14px;
-font-weight: 600;
-letter-spacing: 0.18em;
-text-transform: uppercase;
-transition: all 300ms;
-hover → background: rgba(74,122,53,0.20);
-```
-
-There is also a "ghost link" pattern for secondary actions: bone-400 text, no border, hover → bone-200.
-
-### Form fields
-
-Black-surfaced (`#0d0b08`), 1px `#2a2218` border, bone-300 text, `#4a3f33` placeholder. On focus the border brightens to moss-600 (`#4a7a35`). No rounded corners. Inputs sit at the same height as buttons (44px / `py-3`).
-
-### Hover & press states
-
-- **Links:** decoration-color animates from `rgba(74,122,53,0.4)` → `#4a7a35` over 300ms. No underline thickness change.
-- **Buttons:** background fades in to 20% moss over 300ms. No translation, no scale.
-- **Icons:** color from `#3a3028` → `#8a7d6a` (footer), 200ms.
-- **Press:** no separate active state on the live site. If you add one, darken the moss fill to 30% and skip transforms — never bounce, never spring.
-
-### Motion
-
-Restrained. The only animations on the live site are:
-- The hero video looping.
-- Color/border transitions (200–300ms, default ease).
-- Smooth-scroll on anchor links.
-
-No fade-in-on-scroll, no parallax, no marquee, no blur reveals. If you add motion, it should feel like a candle flicker — subtle, slow, optional.
-
-### Transparency & blur
-
-- Navbar: `bg-[#080808]/90 backdrop-blur-sm` — the only blur on the page.
-- Overlays on imagery: black at 60% opacity.
-- Moss fills are always 15–20% alpha; never 100%.
+- Links: underline colour `moss-rule-40` → `moss-600` over 300ms; no thickness change.
+- Buttons: `moss-fill-soft` fades in over 300ms. No translate, scale, bounce or spring. A pressed state, if added, is 30% moss.
+- Inputs: `ink-edge` border → `moss-600` on focus.
+- Icons: `ink-edge-2` → `bone-400`, 200ms.
+- Keyboard focus on buttons, links and icons: a 1px solid `moss-bright` outline 3px out (8:1 on ink) — added in this system; the live site has none.
+- Motion is restrained: the looping hero video, 200–300ms colour and border transitions, smooth anchor scrolling. No fade-in-on-scroll, parallax, marquee or blur reveals. Anything new should feel like a candle flicker — slow, subtle, optional.
+- The navbar's `blur(6px)` over 90% ink is the only blur. Overlays are black at 60%.
 
 ### Imagery
 
-- **Color treatment:** desaturated, low-key, dominantly black with green moss highlights. The Gravekeepers key art has the same dark-green-on-near-black palette as the chrome.
-- **Cropping:** centered subject, generous negative space, square or 3:4 portrait frames (`max-w-sm`).
-- **No grain filter applied in code** — but the dot-dust texture overlay reads as grain at viewing distance.
-
-### Layout rules
-
-- Fixed navbar at top, full-bleed.
-- Hero is full viewport height, centered both axes.
-- Below the fold: 96px vertical section padding, max 6xl content width, centered.
-- Footer is 80px tall, centered, with a single hairline divider at top.
-- Mobile: same vertical rhythm, columns stack, type scales via `clamp()`.
+Desaturated, low-key, dominantly black with moss-green highlights — the Gravekeepers key art shares the chrome's dark-green-on-near-black palette. Centre the subject with generous negative space, in square or 3:4 portrait frames.
 
 ---
 
 ## Iconography
 
-The studio uses **inline SVGs only** — no icon font, no Lucide, no Heroicons even though `lucide-react` is in `package.json` (not used by any component on master). Three icons total ship in production:
+Inline SVG only — no icon font. Four icons ship in production (`Icon`, and as files in the Icons group): **Mail** (2px stroke, round caps and joins, no fill) and the filled **LinkedIn**, **YouTube** and **Discord** glyphs with their native paths. Colour them through `currentColor`: `ink-edge-2` at rest, `bone-400` on hover.
 
-- Mail (rectangle with envelope flap, 2px stroke, round joins)
-- LinkedIn (filled glyph)
-- YouTube (filled glyph)
-- Discord (filled glyph)
+The one ornamental glyph is the diamond — a small square rotated 45° between hairlines.
 
-Plus one ornamental glyph: a 1.5px rotated square ("the diamond") used between hairlines as a section ornament.
+No emoji. No Unicode glyphs as icons (no ✓, no arrows) — the newsletter's submitted check is an inline SVG. If you need an icon outside the set, use Lucide at a 2px stroke with matching caps and joins, and flag the substitution.
 
-**Stroke style for stroked icons:** 2px stroke, round line-cap, round line-join, no fill. Color from `var(--ink-edge-2)` resting → `var(--bone-400)` hover.
+## The mark
 
-**Filled brand icons** (LinkedIn / YouTube / Discord) keep their native paths, recolored via `currentColor`.
-
-**Mark / logo:** The barrel-and-tentacles glyph — a single-fill silhouette tinted to a brand color. Three prepared tints: **cream** (`--bone-200` `#d4c9b0`, the workhorse on dark grounds — prefer this), **green** (`--brand-primary` `#015a06`, the signal stamp for bone/neutral/print), and **gray** (`--bone-400` `#8a7d6a`, for dim chrome). The master is white on transparent, so any brand color can be applied by recoloring the fill. When placing on dark backgrounds, use cream; on bone or print, use green.
-
-**Emoji:** Never. **Unicode glyphs as icons:** Never (no checkmarks, no arrows). The single inline checkmark in the newsletter "submitted" state is an inline SVG, not `✓`.
-
-If you need an icon not in this set: use Lucide (already imported in the codebase) and FLAG the substitution. Stroke = 2px. Match the line-cap/join above.
+The studio mark is a refinery **barrel with cephalopod tentacles** pouring from its base — the refinery and the creature in one glyph. It ships in three tints (Logos group): **cream** (`bone-200`, the workhorse on dark grounds — prefer it), **green** (`brand-primary`, the stamp on bone and print) and **gray** (`bone-400`, dim chrome). Use the `Lockup` component for the stacked, horizontal, monogram, seal, avatar and chrome lockups. The earlier standalone octopus is retired from lockups and kept only for reference.
 
 ---
 
 ## Index — what's in this folder
 
-- **`README.md`** — this file. Brand context + content + visual rules.
-- **`SKILL.md`** — Agent Skills front-matter so this folder works as a Claude Code skill.
-- **`colors_and_type.css`** — every token (color, size, spacing, motion) as CSS custom properties + semantic element styles. Import this and use `var(--…)` instead of inlining hex codes.
-- **`assets/`** — logos (green / gray / cream), the Gravekeepers key art, the OG share image.
-- **`preview/`** — small HTML cards rendered into the Design System tab. Read them to see tokens in use.
-- **`ui_kits/website/`** — pixel-fidelity recreation of the marketing site as composable JSX components plus an interactive `index.html`.
-
-## Caveats / open questions
-
-- No custom font was shipped in the codebase; **Inter** is a substitute. Confirm whether the studio wants a real display face.
-- No pitch deck or slide template was supplied; no `slides/` was generated. If you have one, send it over and we'll codify the slide system.
-- Status / destructive colors are inferred — the live site never uses them. Treat the rust / blood values as provisional.
-- The barrel-and-tentacles mark is the primary studio mark. A wordmark, monogram, and seal lockup exist (see Brand — Logos); no other alternates.
+- **`README.md`** — this file, synced from The Marsh Refinery Design System artifact (https://claude.ai/artifact/BiAv5TgcbDJaENVAv4k8oe).
+- **`CONNECT_DESIGN_SYSTEM.md`** — how the token layer in `src/index.css` and `tailwind.config.js` is wired to the system.
+- **`assets/`** — barrel marks (cream / green / gray), the retired octopus logos, the Gravekeepers key art, the OG share image.
+- **`ui_kits/website/`** — an older static recreation of the marketing site. The production components in `src/components/` (with the shared atoms in `src/components/brand.jsx`) are the up-to-date reference.

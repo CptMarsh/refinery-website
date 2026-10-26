@@ -35,8 +35,8 @@
     --destructive:           0 62% 31%;
     --destructive-foreground: 42 29% 76%;
 
-    /* Radius — brand is almost square (gothic) */
-    --radius: 0.25rem;
+    /* Radius — square corners everywhere (r-0) */
+    --radius: 0px;
   }
 }
 
@@ -49,7 +49,21 @@
 
   html, body {
     overflow-x: hidden;
-    background-color: #080808;
+    background-color: theme('colors.ink.page');
     @apply text-foreground;
+  }
+
+  /* Keyboard focus: 1px moss-bright outline, 3px out */
+  a:focus-visible, button:focus-visible {
+    outline: 1px solid theme('colors.moss.bright');
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .dot-dust {
+    background-image: radial-gradient(circle, theme('colors.bone.300') 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.06;
   }
 }

@@ -12,7 +12,8 @@ If the user invokes this skill without any other guidance, ask them what they wa
 
 Quick reference:
 - Voice: comic / pulp horror, played deadpan. A foreman who treats a haunted graveyard as a night shift and death as a scheduling problem; the comedy is in the underreaction ("Make it through the night. Or don't."), never in a bolted-on punchline. Name things flatly ("Punch In", "Follow the Dig"). UPPERCASE labels, italic body, exclamation points almost never, never emoji. The visual look stays gothic / occult-industrial.
-- Palette: Ink (#080808 / #0d0b08 / #1e1a14 / #2a2218 / #3a3028), Bone (#d4c9b0 / #c8b89a / #8a7d6a), Moss (#6b8f4e / #4a7a35 / #2a3a20). Moss is the only accent and only ever appears as a 1px border, hairline, underline, or 15–20% alpha wash.
+- Palette: Ink (#080808 / #0d0b08 / #1e1a14 / #2a2218 / #3a3028), Bone (#d4c9b0 / #c8b89a / #a89a80 ledes / #8a7d6a), Moss (#6b8f4e / #4a7a35 / #2a3a20). Moss is the only accent and only ever appears as a 1px border, hairline, underline, or 15–20% alpha wash.
 - Type: Inter 900 for display (uppercase, .08em tracking) + Inter italic for body. No serifs in production today.
 - Square corners on everything except status pills. Hairline ornaments (line · diamond · line) frame display titles.
-- Background stack: black + dot-dust texture (40px, 6% opacity) + 60% black overlay + radial vignette.
+- Background stack: black + optional video + dot-dust texture (40px, 6% opacity) + 60% black overlay. No vignette.
+- In the site code, use the shared atoms in `src/components/brand.jsx` (Ornament, BarrelMark, DotDust, button/eyebrow/meta/tag/link classes) and the Tailwind token names (`bone-350`, `ink-edge3`, `moss-600`…), never hex literals.

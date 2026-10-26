@@ -1,40 +1,15 @@
-import { Link, useLocation } from 'react-router-dom';
-
-const Ornament = ({ className = '' }) => (
-  <div className={`flex items-center gap-4 opacity-30 ${className}`}>
-    <div className="w-16 h-px bg-moss-500" />
-    <div className="w-1.5 h-1.5 rotate-45 bg-moss-500" />
-    <div className="w-16 h-px bg-moss-500" />
-  </div>
-);
+import { Link } from 'react-router-dom';
+import { DotDust, Ornament, eyebrowClass, wideButtonClass } from '@/components/brand';
 
 export default function PageNotFound() {
-  const location = useLocation();
-  const pageName = location.pathname.substring(1);
-
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center overflow-x-hidden bg-background font-ui">
-      {/* Dot texture */}
-      <div
-        className="absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage: 'radial-gradient(circle, #c8b89a 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
-        }}
-      />
-
-      {/* Faint vignette */}
-      <div
-        className="absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse at center, transparent 40%, #000 100%)' }}
-      />
-
-      <h2 className="text-bone-400 text-xl md:text-2xl tracking-widest uppercase mb-8">
-        Quoth the Server
-      </h2>
+      <DotDust />
 
       <div className="relative z-10 flex flex-col items-center">
-        <Ornament />
+        <p className={`${eyebrowClass} mb-8`}>Quoth the Server</p>
+
+        <Ornament opacity={0.3} />
 
         <h1
           className="font-display font-black text-bone-200 leading-none uppercase"
@@ -46,12 +21,13 @@ export default function PageNotFound() {
           404
         </h1>
 
-        <Ornament className="mt-6 mb-8" />
+        <Ornament opacity={0.3} className="mt-6 mb-6" />
 
-        <Link
-          to="/"
-          className="mt-12 px-16 py-3 border border-moss-600 text-moss-500 hover:bg-moss-600/20 font-semibold tracking-widest uppercase text-sm transition-all duration-300"
-        >
+        <p className="font-body italic text-bone-350 text-2xl leading-[1.45]">
+          Nothing buried here.
+        </p>
+
+        <Link to="/" className={`${wideButtonClass} mt-12`}>
           Return Home
         </Link>
       </div>

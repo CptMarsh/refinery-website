@@ -1,79 +1,25 @@
 import { Link } from "react-router-dom";
 import { socialLinks } from "@/data/socials";
-
-const Ornament = ({ className = "" }) => (
-  <div className={`flex items-center gap-4 opacity-30 ${className}`}>
-    <div className="w-16 h-px bg-moss-500" />
-    <div className="w-1.5 h-1.5 rotate-45 bg-moss-500" />
-    <div className="w-16 h-px bg-moss-500" />
-  </div>
-);
-
-const BarrelIcon = () => (
-  <span
-    role="img"
-    aria-label="The Marsh Refinery"
-    className="inline-block w-5 h-5 shrink-0"
-    style={{
-      backgroundColor: "currentColor",
-      WebkitMaskImage: `url(${import.meta.env.BASE_URL}studio-barrel.png)`,
-      maskImage: `url(${import.meta.env.BASE_URL}studio-barrel.png)`,
-      WebkitMaskRepeat: "no-repeat",
-      maskRepeat: "no-repeat",
-      WebkitMaskPosition: "center",
-      maskPosition: "center",
-      WebkitMaskSize: "contain",
-      maskSize: "contain",
-    }}
-  />
-);
+import { BarrelMark, DotDust, Ornament, eyebrowClass } from "@/components/brand";
 
 const tileClass =
-  "flex items-center gap-4 w-full py-3 px-5 border border-moss-600 text-moss-500 hover:bg-moss-600/20 transition-all duration-300 text-sm font-semibold tracking-widest uppercase";
+  "flex items-center gap-4 w-full py-3 px-5 border border-moss-600 text-moss-500 hover:bg-moss-600/20 transition-all duration-300 text-[13px] font-semibold tracking-wider uppercase";
 
 export default function CptMarsh() {
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center overflow-hidden bg-background font-ui">
 
-      {/* Dot texture */}
-      <div
-        className="absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage: "radial-gradient(circle, #c8b89a 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
-
-      {/* Vignette */}
-      <div
-        className="absolute inset-0"
-        style={{ background: "radial-gradient(ellipse at center, transparent 40%, #000 100%)" }}
-      />
+      <DotDust />
 
       <div className="relative z-10 flex flex-col items-center w-full max-w-md py-16">
 
         {/* Eyebrow */}
-        <p className="text-moss-500 text-xs tracking-ritual uppercase mb-8 font-medium">
+        <p className={`${eyebrowClass} mb-8`}>
           The Marsh Refinery
         </p>
 
         {/* Barrel mark */}
-        <span
-          role="img"
-          aria-label="The Marsh Refinery"
-          className="inline-block w-16 h-16 mb-6 text-bone-200"
-          style={{
-            backgroundColor: "#d4c9b0",
-            WebkitMaskImage: `url(${import.meta.env.BASE_URL}studio-barrel.png)`,
-            maskImage: `url(${import.meta.env.BASE_URL}studio-barrel.png)`,
-            WebkitMaskRepeat: "no-repeat",
-            maskRepeat: "no-repeat",
-            WebkitMaskPosition: "center",
-            maskPosition: "center",
-            WebkitMaskSize: "contain",
-            maskSize: "contain",
-          }}
-        />
+        <BarrelMark className="w-16 h-16 mb-6 text-bone-200" />
 
         {/* Name */}
         <h1
@@ -92,7 +38,7 @@ export default function CptMarsh() {
         </p>
 
         {/* Ornament */}
-        <Ornament className="my-8" />
+        <Ornament opacity={0.3} className="my-8" />
 
         {/* Link stack */}
         <nav className="flex flex-col gap-3 w-full">
@@ -111,13 +57,13 @@ export default function CptMarsh() {
           ))}
 
           <Link to="/" className={tileClass}>
-            <BarrelIcon />
+            <BarrelMark className="w-5 h-5" label="" />
             <span>Studio Website</span>
           </Link>
         </nav>
 
         {/* Copyright */}
-        <p className="text-[#2a2218] text-xs tracking-wider mt-12">
+        <p className="text-ink-edge text-[11px] tracking-[0.04em] mt-12">
           © {new Date().getFullYear()} The Marsh Refinery.
         </p>
       </div>

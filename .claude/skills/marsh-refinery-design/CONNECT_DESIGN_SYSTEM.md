@@ -63,27 +63,26 @@ Replace the entire `@layer base { :root { … } .dark { … } }` block with the 
 
 Keep the second `@layer base { * { @apply border-border …} html, body { … } }` block as-is — it already sets `background-color: #080808`.
 
-**Fonts — the font files are currently NOT loaded at all; this step is mandatory, not an optimization.** `tailwind.config.js` maps `font-display` → `'Cormorant Garamond'…` and `font-ui` → `'Inter'…`, and pages already use those classes — but nothing loads the actual font files (`index.html` has no `<link>`, `index.css` has no `@import`, `main.jsx` imports no fonts). So the browser falls back: display text renders in **Times New Roman**, UI text in the system sans. That's why it doesn't match the slide template (which loads the real webfonts). The hard-refresh "flicker" is just the unstyled → Times fallback paint.
+**Fonts — the font files are currently NOT loaded at all; this step is mandatory, not an optimization.** The type system is **Inter** doing double duty: `font-display` → `'Inter'` (weight 900, wide tracking, uppercase) and body copy → `'Inter'` *italic 400* for the in-fiction voice. `font-mono` → `'JetBrains Mono'`. But nothing loads the actual font files (`index.html` has no `<link>`, `index.css` has no `@import`, `main.jsx` imports no fonts), so the browser falls back to system sans and the italic body loses its character. That's why it doesn't match the slide template (which loads the real webfont). The hard-refresh "flicker" is just the unstyled → fallback paint.
 
 **Fix: self-host via [Fontsource](https://fontsource.org) — do NOT use the Google Fonts CDN `@import`.** CDN + `display=swap` would load the right fonts but reintroduce FOUT (fallback, then a visible swap) on hard refresh. Self-hosting loads the correct fonts *and* bundles them with the app, so they're cached with everything else and there's no swap. Install:
 
 ```bash
-npm i @fontsource-variable/cormorant-garamond @fontsource-variable/inter @fontsource/jetbrains-mono
+npm i @fontsource-variable/inter @fontsource/jetbrains-mono
 ```
 
 Then import the weights the design system uses — once, at the top of `src/main.jsx`, above the CSS import, so Vite bundles and fingerprints them:
 
 ```js
-import '@fontsource-variable/cormorant-garamond'; // display (400–700, incl. italic)
-import '@fontsource-variable/inter';               // UI / body
+import '@fontsource-variable/inter';               // display + UI + italic body
 import '@fontsource/jetbrains-mono/400.css';        // mono
 import '@fontsource/jetbrains-mono/500.css';
 import './index.css';
 ```
 
-Do **not** add the `@import url('https://fonts.googleapis.com/…')` line to `index.css`. Fontsource declares `@font-face` with `font-display: swap`; since the files are now local they resolve before first paint, so no visible swap. If any residual flicker remains on the display font, override that face to `font-display: optional`.
+Do **not** add the `@import url('https://fonts.googleapis.com/…')` line to `index.css`. Fontsource declares `@font-face` with `font-display: swap`; since the files are now local they resolve before first paint, so no visible swap.
 
-**Verify** after: `GRAVEKEEPERS` on the ComingSoon page should render in Cormorant Garamond (high-contrast serif with fine hairlines), not Times New Roman.
+**Verify** after: `GRAVEKEEPERS` on the ComingSoon page should render in heavy uppercase Inter (900, wide tracking), and body copy in Inter *italic* — not the system sans fallback.
 
 ---
 
@@ -102,7 +101,7 @@ extend: {
     'green-deep': '#0e4a16',     // --brand-green-deep (mark fill / print)
   },
   fontFamily: {
-    display: ["'Cormorant Garamond'", "'Times New Roman'", 'Georgia', 'serif'],
+    display: ['Inter', '-apple-system', 'BlinkMacSystemFont', "'Segoe UI'", 'sans-serif'],
     ui:      ['Inter', '-apple-system', 'BlinkMacSystemFont', "'Segoe UI'", 'sans-serif'],
     mono:    ['ui-monospace', "'JetBrains Mono'", 'Menlo', 'Consolas', 'monospace'],
   },
@@ -161,5 +160,5 @@ Full rules live in the design system's `README.md` (Content Fundamentals) and `S
 
 - `bg-primary` is signal green, `text-foreground` is bone, shadcn `Button`/`Card`/`Badge` render dark+brand out of the box.
 - No `[#rrggbb]` arbitrary color literals remain in `src/pages/` or `src/lib/PageNotFound.jsx`.
-- Display text is Cormorant Garamond; UI text is Inter.
+- Display text is Inter 900 (uppercase, wide tracking); body copy is Inter italic.
 - The 404 says "QUOTH THE SERVER".
