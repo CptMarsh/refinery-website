@@ -49,7 +49,30 @@
 
   html, body {
     overflow-x: hidden;
-    background-color: #080808;
+    background-color: theme('colors.ink.page');
     @apply text-foreground;
+  }
+
+  /* Keyboard focus: 1px moss-bright outline, 3px out */
+  :where(a, button):focus-visible {
+    outline: 1px solid theme('colors.moss.bright');
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  /* Dot dust: 1px bone-300 dot on a 40px tile; pair with opacity-texture */
+  .bg-dust {
+    background-image: radial-gradient(circle, theme('colors.bone.300') 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-vignette {
+    background-image: radial-gradient(ellipse at center, transparent 40%, #000 100%);
+  }
+
+  /* shadow-display: black lift + moss-glow halo, hero title only */
+  .text-shadow-display {
+    text-shadow: 0 2px 40px rgba(0, 0, 0, 0.9), 0 0 60px theme('colors.moss.500 / 15%');
   }
 }

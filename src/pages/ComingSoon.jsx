@@ -1,66 +1,30 @@
 import StudioFooter from "../components/StudioFooter";
+import { BackgroundLayers, Eyebrow, Ornament } from "@/components/brand";
 
 export default function ComingSoon() {
   return (
     <div className="relative flex flex-col min-h-screen bg-background text-foreground font-ui">
       <div className="relative flex flex-col items-center justify-center flex-1 px-6 text-center overflow-hidden">
-
-        {/* Dot texture */}
-        <div
-          className="absolute inset-0 opacity-[0.06]"
-          style={{
-            backgroundImage: "radial-gradient(circle, #c8b89a 1px, transparent 1px)",
-            backgroundSize: "40px 40px"
-          }}
-        />
-
-        {/* Vignette */}
-        <div
-          className="absolute inset-0"
-          style={{ background: "radial-gradient(ellipse at center, transparent 40%, #000 100%)" }}
-        />
+        <BackgroundLayers overlay={false} vignette />
 
         <div className="relative z-10 flex flex-col items-center w-full">
+          <Eyebrow className="mb-8">The Marsh Refinery</Eyebrow>
 
-          {/* Studio name */}
-          <p className="text-moss-500 text-xs tracking-ritual uppercase mb-8 font-medium">
-            The Marsh Refinery
-          </p>
-
-          {/* Top ornamental rule */}
-          <div className="flex items-center gap-4 mb-8 opacity-40">
-            <div className="w-16 h-px bg-moss-500" />
-            <div className="w-1.5 h-1.5 rotate-45 bg-moss-500" />
-            <div className="w-16 h-px bg-moss-500" />
-          </div>
+          <Ornament className="mb-8" />
 
           {/* Heading */}
-          <h1
-            className="font-display font-black text-bone-200 leading-none mb-6 uppercase w-full"
-            style={{
-              fontSize: "clamp(2rem, 9vw, 9rem)",
-              letterSpacing: "0.08em"
-            }}
-          >
+          <h1 className="font-display font-black text-display text-bone-200 leading-[0.95] tracking-wide uppercase mb-6 w-full">
             GRAVEKEEPERS
           </h1>
 
-          {/* Bottom ornamental rule */}
-          <div className="flex items-center gap-4 mb-6 opacity-30">
-            <div className="w-16 h-px bg-moss-500" />
-            <div className="w-1.5 h-1.5 rotate-45 bg-moss-500" />
-            <div className="w-16 h-px bg-moss-500" />
-          </div>
+          <Ornament opacity={0.3} className="mb-6" />
 
           {/* Tagline */}
-          <p className="font-body text-bone-400 text-base md:text-lg max-w-md leading-relaxed italic mb-4">
-            Make it through the night. Or don't.
+          <p className="font-body italic text-2xl leading-[1.45] text-bone-350 max-w-[480px] mb-4">
+            Make it through the night. Or don’t.
           </p>
 
-          {/* Coming soon label */}
-          <p className="text-moss-500 text-xs tracking-ritual uppercase font-medium mb-12">
-            Coming Soon
-          </p>
+          <Eyebrow className="mb-12">Coming Soon</Eyebrow>
         </div>
       </div>
       <StudioFooter />
