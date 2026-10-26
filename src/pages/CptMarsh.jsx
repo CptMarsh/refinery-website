@@ -5,13 +5,13 @@ const tileClass = "w-full justify-start gap-4 px-5";
 
 export default function CptMarsh() {
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center overflow-hidden bg-background font-ui">
+    <div className="relative flex flex-col items-center min-h-dvh px-6 text-center overflow-hidden bg-background font-ui">
       <BackgroundLayers overlay={false} />
 
-      <div className="relative z-10 flex flex-col items-center w-full max-w-md py-16">
-        <Eyebrow className="mb-8">The Marsh Refinery</Eyebrow>
+      <div className="relative z-10 flex flex-col items-center w-full max-w-md py-8 sm:py-16">
+        <Eyebrow className="mb-6 sm:mb-8">The Marsh Refinery</Eyebrow>
 
-        <Mark className="w-16 h-16 mb-6 text-bone-200" />
+        <Mark className="w-12 h-12 mb-4 sm:w-16 sm:h-16 sm:mb-6 text-bone-200" />
 
         {/* Name */}
         <h1 className="font-display font-black text-h1 text-bone-200 leading-none tracking-wide uppercase">
@@ -23,7 +23,7 @@ export default function CptMarsh() {
           Indie Game Dev
         </p>
 
-        <Ornament opacity={0.3} className="my-8" />
+        <Ornament opacity={0.3} className="my-6 sm:my-8" />
 
         {/* Link stack */}
         <nav className="flex flex-col gap-3 w-full">
@@ -48,7 +48,7 @@ export default function CptMarsh() {
         </nav>
 
         {/* Copyright */}
-        <p className="text-ink-edge text-xs tracking-wider mt-12">
+        <p className="text-ink-edge text-xs tracking-wider mt-8 sm:mt-12">
           © {new Date().getFullYear()} The Marsh Refinery.
         </p>
       </div>
