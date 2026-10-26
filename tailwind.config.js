@@ -15,15 +15,30 @@ module.exports = {
   			body:    ["'Inter Variable'", 'Inter', '-apple-system', 'BlinkMacSystemFont', "'Segoe UI'", 'sans-serif'],
   			mono:    ['ui-monospace', "'JetBrains Mono'", 'Menlo', 'Consolas', 'monospace'],
   		},
+  		fontSize: {
+  			display: 'clamp(2rem, 9vw, 9rem)',    // t-display-size
+  			h1:      'clamp(1.75rem, 5vw, 3rem)', // t-h1-size
+  		},
   		letterSpacing: {
-  			wide: '0.08em', wider: '0.18em', widest: '0.30em', ritual: '0.40em',
+  			tight: '0.02em', wide: '0.08em', wider: '0.18em', widest: '0.30em', ritual: '0.40em',
+  		},
+  		boxShadow: {
+  			'key-art': '0 0 60px rgba(0,0,0,0.80)',
+  		},
+  		opacity: {
+  			texture: '0.06',
+  			overlay: '0.6',
   		},
   		colors: {
-  			ink:  { void:'#050505', page:'#080808', surface:'#0d0b08', rule:'#1e1a14', edge:'#2a2218', edge2:'#3a3028', edge3:'#4a3f33' },
-  			bone: { 100:'#f0e7d2', 200:'#d4c9b0', 300:'#c8b89a', 400:'#8a7d6a', 500:'#6b6052' },
+  			// Marsh Refinery design system tokens (tokens.json). Moss alpha tokens are opacity modifiers:
+  			// moss-fill-soft = moss-600/20, moss-rule-40 = moss-600/40, moss-fill-rule = moss-600/50, moss-glow = moss-500/15.
+  			ink:  { void:'#050505', page:'#080808', surface:'#0d0b08', rule:'#1e1a14', edge:'#2a2218', 'edge-2':'#3a3028', 'edge-3':'#4a3f33', 'edge-4':'#5a4f44' },
+  			bone: { 100:'#f0e7d2', 200:'#d4c9b0', 300:'#c8b89a', 350:'#a89a80', 400:'#8a7d6a', 500:'#6b6052' },
   			moss: { bright:'#8aae6b', 500:'#6b8f4e', 600:'#4a7a35', 700:'#2a3a20' },
   			signal: '#015a06',
   			'green-deep': '#0e4a16',
+  			blood: '#7a2a1f',
+  			rust: '#a45a3a',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

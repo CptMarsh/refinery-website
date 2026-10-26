@@ -1,30 +1,16 @@
 import { Link } from "react-router-dom";
+import { Mark } from "@/components/brand";
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-[#080808]/90 backdrop-blur-sm border-b border-[#1e1a14]">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-3.5 bg-ink-page/90 backdrop-blur-[6px] border-b border-ink-rule">
       <Link to="/" className="flex items-center gap-3">
-        <span
-          role="img"
-          aria-label="The Marsh Refinery"
-          className="inline-block w-7 h-7 shrink-0"
-          style={{
-            backgroundColor: "#d4c9b0",
-            WebkitMaskImage: `url(${import.meta.env.BASE_URL}studio-barrel.png)`,
-            maskImage: `url(${import.meta.env.BASE_URL}studio-barrel.png)`,
-            WebkitMaskRepeat: "no-repeat",
-            maskRepeat: "no-repeat",
-            WebkitMaskPosition: "center",
-            maskPosition: "center",
-            WebkitMaskSize: "contain",
-            maskSize: "contain",
-          }}
-        />
-        <span className="text-[#d4c9b0] text-xs font-semibold uppercase tracking-widest">THE MARSH REFINERY</span>
+        <Mark label={null} className="w-7 h-7 text-bone-200" />
+        <span className="text-bone-200 text-[11px] font-semibold uppercase tracking-wider">THE MARSH REFINERY</span>
       </Link>
       {/* <a
         href="#wishlist"
-        className="text-xs px-5 py-2 border border-[#2a3a20] text-[#6b8f4e] hover:bg-[#4a7a35]/20 tracking-widest uppercase transition-all duration-300">
+        className="text-[11px] px-5 py-2 border border-moss-700 text-moss-500 hover:bg-moss-600/20 tracking-wider uppercase transition-colors duration-300">
 
         Wishlist
       </a> */}
