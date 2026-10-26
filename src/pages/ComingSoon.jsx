@@ -2,7 +2,7 @@ import StudioFooter from "../components/StudioFooter";
 
 export default function ComingSoon() {
   return (
-    <div className="relative flex flex-col min-h-screen bg-background font-ui">
+    <div className="relative flex flex-col min-h-screen bg-background text-foreground font-ui">
       <div className="relative flex flex-col items-center justify-center flex-1 px-6 text-center overflow-hidden">
 
         {/* Dot texture */}

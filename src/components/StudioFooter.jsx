@@ -1,14 +1,17 @@
 import { socialLinks } from '@/data/socials';
 
+// LinkedIn is a personal link, so only /cptmarsh shows it.
+const footerLinks = socialLinks.filter(({ label }) => label !== 'LinkedIn');
+
 export default function StudioFooter() {
   return (
-    <footer className="py-10 px-6 border-t border-[#1e1a14] bg-[#080808]">
+    <footer className="py-10 px-6 border-t border-[#1e1a14] bg-[#080808] font-ui">
       <div className="max-w-4xl mx-auto flex flex-col items-center gap-4">
 
         <div className="flex flex-col items-center gap-2">
           <span className="text-[#4a3f33] text-xs tracking-widest uppercase">Contact</span>
           <div className="flex items-center gap-4">
-            {socialLinks.map(({ label, href, icon }) => (
+            {footerLinks.map(({ label, href, icon }) => (
               <a
                 key={label}
                 href={href}
