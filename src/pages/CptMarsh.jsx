@@ -5,7 +5,7 @@ const tileClass = "w-full justify-start gap-4 px-5";
 
 export default function CptMarsh() {
   return (
-    <div className="relative flex flex-col items-center min-h-dvh px-6 text-center overflow-hidden bg-background font-ui">
+    <div className="relative flex flex-col items-center min-h-dvh px-6 text-center overflow-hidden bg-background font-ui justify-center">
       <BackgroundLayers overlay={false} />
 
       <div className="relative z-10 flex flex-col items-center w-full max-w-md py-8 sm:py-16">
