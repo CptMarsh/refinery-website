@@ -1,10 +1,8 @@
-import { BackgroundLayers, Eyebrow, Ornament } from "@/components/brand";
+import { Eyebrow, Ornament } from "@/components/brand";
 
 export default function HeroSection() {
   return (
     <section className="relative flex flex-col items-center justify-center flex-1 px-6 py-16 text-center overflow-hidden">
-      <BackgroundLayers overlay={false} />
-
       <div className="relative z-10 flex flex-col items-center w-full">
         <Ornament className="mb-8" />
 

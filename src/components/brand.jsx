@@ -23,7 +23,7 @@ const buttonVariants = {
 
 // Renders a <button> when `type` is set, a router <Link> when `to` is set, else an <a>.
 /**
- * @param {{ variant?: keyof typeof buttonVariants, wide?: boolean, to?: string, type?: "button" | "submit" | "reset" }
+ * @param {{ variant?: keyof typeof buttonVariants, wide?: boolean, to?: string, type?: "button" | "submit" | "reset", disabled?: boolean }
  *   & Omit<import("react").AnchorHTMLAttributes<HTMLElement>, "type">} props
  */
 export const Button = ({ variant = "primary", wide = false, to, type, className, ...props }) => {
